@@ -7,13 +7,20 @@ import dk.sdu.mmmi.mdsd.ui23.ui23.Expression;
 import dk.sdu.mmmi.mdsd.ui23.ui23.FormUse;
 import dk.sdu.mmmi.mdsd.ui23.ui23.Ui23Package;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link dk.sdu.mmmi.mdsd.ui23.ui23.impl.FormUseImpl#getName <em>Name</em>}</li>
- *   <li>{@link dk.sdu.mmmi.mdsd.ui23.ui23.impl.FormUseImpl#getExp <em>Exp</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.ui23.ui23.impl.FormUseImpl#getExpressions <em>Expressions</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,14 +59,14 @@ public class FormUseImpl extends ComponentImpl implements FormUse
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getExp() <em>Exp</em>}' containment reference.
+   * The cached value of the '{@link #getExpressions() <em>Expressions</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExp()
+   * @see #getExpressions()
    * @generated
    * @ordered
    */
-  protected Expression exp;
+  protected EList<Expression> expressions;
 
   /**
    * <!-- begin-user-doc -->
@@ -113,48 +120,13 @@ public class FormUseImpl extends ComponentImpl implements FormUse
    * @generated
    */
   @Override
-  public Expression getExp()
+  public EList<Expression> getExpressions()
   {
-    return exp;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetExp(Expression newExp, NotificationChain msgs)
-  {
-    Expression oldExp = exp;
-    exp = newExp;
-    if (eNotificationRequired())
+    if (expressions == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Ui23Package.FORM_USE__EXP, oldExp, newExp);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      expressions = new EObjectContainmentEList<Expression>(Expression.class, this, Ui23Package.FORM_USE__EXPRESSIONS);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setExp(Expression newExp)
-  {
-    if (newExp != exp)
-    {
-      NotificationChain msgs = null;
-      if (exp != null)
-        msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Ui23Package.FORM_USE__EXP, null, msgs);
-      if (newExp != null)
-        msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Ui23Package.FORM_USE__EXP, null, msgs);
-      msgs = basicSetExp(newExp, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Ui23Package.FORM_USE__EXP, newExp, newExp));
+    return expressions;
   }
 
   /**
@@ -167,8 +139,8 @@ public class FormUseImpl extends ComponentImpl implements FormUse
   {
     switch (featureID)
     {
-      case Ui23Package.FORM_USE__EXP:
-        return basicSetExp(null, msgs);
+      case Ui23Package.FORM_USE__EXPRESSIONS:
+        return ((InternalEList<?>)getExpressions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -185,8 +157,8 @@ public class FormUseImpl extends ComponentImpl implements FormUse
     {
       case Ui23Package.FORM_USE__NAME:
         return getName();
-      case Ui23Package.FORM_USE__EXP:
-        return getExp();
+      case Ui23Package.FORM_USE__EXPRESSIONS:
+        return getExpressions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -196,6 +168,7 @@ public class FormUseImpl extends ComponentImpl implements FormUse
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -204,8 +177,9 @@ public class FormUseImpl extends ComponentImpl implements FormUse
       case Ui23Package.FORM_USE__NAME:
         setName((String)newValue);
         return;
-      case Ui23Package.FORM_USE__EXP:
-        setExp((Expression)newValue);
+      case Ui23Package.FORM_USE__EXPRESSIONS:
+        getExpressions().clear();
+        getExpressions().addAll((Collection<? extends Expression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -224,8 +198,8 @@ public class FormUseImpl extends ComponentImpl implements FormUse
       case Ui23Package.FORM_USE__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case Ui23Package.FORM_USE__EXP:
-        setExp((Expression)null);
+      case Ui23Package.FORM_USE__EXPRESSIONS:
+        getExpressions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -243,8 +217,8 @@ public class FormUseImpl extends ComponentImpl implements FormUse
     {
       case Ui23Package.FORM_USE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case Ui23Package.FORM_USE__EXP:
-        return exp != null;
+      case Ui23Package.FORM_USE__EXPRESSIONS:
+        return expressions != null && !expressions.isEmpty();
     }
     return super.eIsSet(featureID);
   }

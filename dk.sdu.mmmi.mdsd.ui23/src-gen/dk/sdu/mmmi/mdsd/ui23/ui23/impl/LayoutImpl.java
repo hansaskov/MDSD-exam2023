@@ -9,12 +9,15 @@ import dk.sdu.mmmi.mdsd.ui23.ui23.Ui23Package;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -27,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dk.sdu.mmmi.mdsd.ui23.ui23.impl.LayoutImpl#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.ui23.ui23.impl.LayoutImpl#getComponents <em>Components</em>}</li>
  * </ul>
  *
@@ -34,6 +38,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class LayoutImpl extends ComponentImpl implements Layout
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getComponents() <em>Components</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -63,6 +87,31 @@ public class LayoutImpl extends ComponentImpl implements Layout
   protected EClass eStaticClass()
   {
     return Ui23Package.Literals.LAYOUT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, Ui23Package.LAYOUT__NAME, oldName, name));
   }
 
   /**
@@ -106,6 +155,8 @@ public class LayoutImpl extends ComponentImpl implements Layout
   {
     switch (featureID)
     {
+      case Ui23Package.LAYOUT__NAME:
+        return getName();
       case Ui23Package.LAYOUT__COMPONENTS:
         return getComponents();
     }
@@ -123,6 +174,9 @@ public class LayoutImpl extends ComponentImpl implements Layout
   {
     switch (featureID)
     {
+      case Ui23Package.LAYOUT__NAME:
+        setName((String)newValue);
+        return;
       case Ui23Package.LAYOUT__COMPONENTS:
         getComponents().clear();
         getComponents().addAll((Collection<? extends Component>)newValue);
@@ -141,6 +195,9 @@ public class LayoutImpl extends ComponentImpl implements Layout
   {
     switch (featureID)
     {
+      case Ui23Package.LAYOUT__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case Ui23Package.LAYOUT__COMPONENTS:
         getComponents().clear();
         return;
@@ -158,10 +215,29 @@ public class LayoutImpl extends ComponentImpl implements Layout
   {
     switch (featureID)
     {
+      case Ui23Package.LAYOUT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case Ui23Package.LAYOUT__COMPONENTS:
         return components != null && !components.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //LayoutImpl

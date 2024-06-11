@@ -462,9 +462,20 @@ public class Ui23PackageImpl extends EPackageImpl implements Ui23Package
    * @generated
    */
   @Override
+  public EAttribute getLayout_Name()
+  {
+    return (EAttribute)layoutEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getLayout_Components()
   {
-    return (EReference)layoutEClass.getEStructuralFeatures().get(0);
+    return (EReference)layoutEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -495,7 +506,7 @@ public class Ui23PackageImpl extends EPackageImpl implements Ui23Package
    * @generated
    */
   @Override
-  public EReference getElement_Exp()
+  public EReference getElement_Expression()
   {
     return (EReference)elementEClass.getEStructuralFeatures().get(0);
   }
@@ -583,7 +594,7 @@ public class Ui23PackageImpl extends EPackageImpl implements Ui23Package
    * @generated
    */
   @Override
-  public EReference getFormUse_Exp()
+  public EReference getFormUse_Expressions()
   {
     return (EReference)formUseEClass.getEStructuralFeatures().get(1);
   }
@@ -1195,12 +1206,13 @@ public class Ui23PackageImpl extends EPackageImpl implements Ui23Package
     createEReference(formEClass, FORM__LAYOUT);
 
     layoutEClass = createEClass(LAYOUT);
+    createEAttribute(layoutEClass, LAYOUT__NAME);
     createEReference(layoutEClass, LAYOUT__COMPONENTS);
 
     componentEClass = createEClass(COMPONENT);
 
     elementEClass = createEClass(ELEMENT);
-    createEReference(elementEClass, ELEMENT__EXP);
+    createEReference(elementEClass, ELEMENT__EXPRESSION);
 
     labelEClass = createEClass(LABEL);
 
@@ -1212,7 +1224,7 @@ public class Ui23PackageImpl extends EPackageImpl implements Ui23Package
 
     formUseEClass = createEClass(FORM_USE);
     createEAttribute(formUseEClass, FORM_USE__NAME);
-    createEReference(formUseEClass, FORM_USE__EXP);
+    createEReference(formUseEClass, FORM_USE__EXPRESSIONS);
 
     parameterEClass = createEClass(PARAMETER);
     createEAttribute(parameterEClass, PARAMETER__NAME);
@@ -1358,12 +1370,13 @@ public class Ui23PackageImpl extends EPackageImpl implements Ui23Package
     initEReference(getForm_Layout(), this.getLayout(), null, "layout", null, 0, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(layoutEClass, Layout.class, "Layout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLayout_Name(), ecorePackage.getEString(), "name", null, 0, 1, Layout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLayout_Components(), this.getComponent(), null, "components", null, 0, -1, Layout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getElement_Exp(), this.getExpression(), null, "exp", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getElement_Expression(), this.getExpression(), null, "expression", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(labelEClass, Label.class, "Label", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1375,7 +1388,7 @@ public class Ui23PackageImpl extends EPackageImpl implements Ui23Package
 
     initEClass(formUseEClass, FormUse.class, "FormUse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFormUse_Name(), ecorePackage.getEString(), "name", null, 0, 1, FormUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFormUse_Exp(), this.getExpression(), null, "exp", null, 0, 1, FormUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFormUse_Expressions(), this.getExpression(), null, "expressions", null, 0, -1, FormUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

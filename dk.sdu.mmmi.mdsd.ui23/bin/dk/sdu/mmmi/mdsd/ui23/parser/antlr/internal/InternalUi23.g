@@ -398,15 +398,35 @@ ruleLayout returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0='row'
-			{
-				newLeafNode(otherlv_0, grammarAccess.getLayoutAccess().getRowKeyword_0_0());
-			}
+			(
+				(
+					lv_name_0_0='row'
+					{
+						newLeafNode(lv_name_0_0, grammarAccess.getLayoutAccess().getNameRowKeyword_0_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getLayoutRule());
+						}
+						setWithLastConsumed($current, "name", lv_name_0_0, "row");
+					}
+				)
+			)
 			    |
-			otherlv_1='column'
-			{
-				newLeafNode(otherlv_1, grammarAccess.getLayoutAccess().getColumnKeyword_0_1());
-			}
+			(
+				(
+					lv_name_1_0='column'
+					{
+						newLeafNode(lv_name_1_0, grammarAccess.getLayoutAccess().getNameColumnKeyword_0_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getLayoutRule());
+						}
+						setWithLastConsumed($current, "name", lv_name_1_0, "column");
+					}
+				)
+			)
 		)
 		otherlv_2='{'
 		{
@@ -555,17 +575,17 @@ ruleLabel returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getLabelAccess().getExpExpParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getLabelAccess().getExpressionExpParserRuleCall_2_0());
 				}
-				lv_exp_2_0=ruleExp
+				lv_expression_2_0=ruleExp
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getLabelRule());
 					}
 					set(
 						$current,
-						"exp",
-						lv_exp_2_0,
+						"expression",
+						lv_expression_2_0,
 						"dk.sdu.mmmi.mdsd.ui23.Ui23.Exp");
 					afterParserOrEnumRuleCall();
 				}
@@ -619,17 +639,17 @@ ruleInputText returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getInputTextAccess().getExpExpParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getInputTextAccess().getExpressionExpParserRuleCall_3_0());
 				}
-				lv_exp_3_0=ruleExp
+				lv_expression_3_0=ruleExp
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getInputTextRule());
 					}
 					set(
 						$current,
-						"exp",
-						lv_exp_3_0,
+						"expression",
+						lv_expression_3_0,
 						"dk.sdu.mmmi.mdsd.ui23.Ui23.Exp");
 					afterParserOrEnumRuleCall();
 				}
@@ -689,17 +709,17 @@ ruleButton returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getButtonAccess().getExpExpParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getButtonAccess().getExpressionExpParserRuleCall_4_0());
 				}
-				lv_exp_4_0=ruleExp
+				lv_expression_4_0=ruleExp
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getButtonRule());
 					}
 					set(
 						$current,
-						"exp",
-						lv_exp_4_0,
+						"expression",
+						lv_expression_4_0,
 						"dk.sdu.mmmi.mdsd.ui23.Ui23.Exp");
 					afterParserOrEnumRuleCall();
 				}
@@ -750,17 +770,17 @@ ruleFormUse returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFormUseAccess().getExpExpParserRuleCall_2_0_0());
+						newCompositeNode(grammarAccess.getFormUseAccess().getExpressionsExpParserRuleCall_2_0_0());
 					}
-					lv_exp_2_0=ruleExp
+					lv_expressions_2_0=ruleExp
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFormUseRule());
 						}
-						set(
+						add(
 							$current,
-							"exp",
-							lv_exp_2_0,
+							"expressions",
+							lv_expressions_2_0,
 							"dk.sdu.mmmi.mdsd.ui23.Ui23.Exp");
 						afterParserOrEnumRuleCall();
 					}
@@ -774,17 +794,17 @@ ruleFormUse returns [EObject current=null]
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getFormUseAccess().getExpExpParserRuleCall_2_1_1_0());
+							newCompositeNode(grammarAccess.getFormUseAccess().getExpressionsExpParserRuleCall_2_1_1_0());
 						}
-						lv_exp_4_0=ruleExp
+						lv_expressions_4_0=ruleExp
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getFormUseRule());
 							}
-							set(
+							add(
 								$current,
-								"exp",
-								lv_exp_4_0,
+								"expressions",
+								lv_expressions_4_0,
 								"dk.sdu.mmmi.mdsd.ui23.Ui23.Exp");
 							afterParserOrEnumRuleCall();
 						}

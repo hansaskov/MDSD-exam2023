@@ -20,7 +20,7 @@ class Ui23GenerationTest {
 	@Inject	extension CompilationTestHelper
 	
 	@Test
-	def void loadModel1() {
+	def void testBasic() {
 		'''
 			title Basic
 			
@@ -33,7 +33,7 @@ class Ui23GenerationTest {
 			'''
 			MULTIPLE FILES WERE GENERATED
 			
-			File 1 : /myProject/./src-gen/Basic/BasicForm.java
+			File 1 : /myProject/./src-gen/basic/BasicForm.java
 			
 			package user_interface.basic;
 					
@@ -65,7 +65,7 @@ class Ui23GenerationTest {
 				}
 			}
 			
-			File 2 : /myProject/./src-gen/Basic/UserInterface.java
+			File 2 : /myProject/./src-gen/basic/UserInterface.java
 			
 			package user_interface.basic;
 				
@@ -93,6 +93,87 @@ class Ui23GenerationTest {
 			public abstract class Form{
 				public abstract boolean checkValidity();
 				public abstract JPanel createPanel();
+			}
+			
+'''
+		)
+	}
+	
+	@Test
+	def void testLayout() {
+		'''
+		title Layout
+		form Basic{
+		    row {
+		        label : "Left"
+		        label : "Right"
+		    }
+		}
+		'''.assertCompilesTo(
+			'''
+			MULTIPLE FILES WERE GENERATED
+			
+			File 1 : /myProject/./src-gen/common/Form.java
+			
+			package user_interface.common;
+			
+			import javax.swing.*;
+			
+			public abstract class Form{
+				public abstract boolean checkValidity();
+				public abstract JPanel createPanel();
+			}
+			
+			File 2 : /myProject/./src-gen/layout/BasicForm.java
+			
+			package user_interface.layout;
+					
+			import javax.swing.*;
+			import java.awt.event.*;
+			import user_interface.common.*;
+			
+			public class BasicForm extends Form{
+			
+				UserInterface parent;
+				
+				BasicForm(UserInterface parent) {
+					this.parent = parent;
+				}
+			
+				public JPanel createPanel(){
+					return createPanel1();
+				}
+			
+				public JPanel createPanel1() {
+					JPanel panel = new JPanel();
+					panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+					panel.add(new JLabel("Left"));
+					panel.add(new JLabel("Right"));
+					return panel;
+				}
+			
+				public boolean checkValidity(){
+					return true;
+				}
+			}
+			
+			File 3 : /myProject/./src-gen/layout/UserInterface.java
+			
+			package user_interface.layout;
+				
+			import javax.swing.*;
+			
+			public class UserInterface{
+				public JFrame frame;
+			
+				public void open() {
+					frame = new JFrame("Layout");
+					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					BasicForm form = new BasicForm(this);
+					frame.add(form.createPanel());
+					frame.pack();
+					frame.setVisible(true);
+				}
 			}
 			
 '''

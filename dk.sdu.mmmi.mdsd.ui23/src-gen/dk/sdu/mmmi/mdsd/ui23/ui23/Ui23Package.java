@@ -216,13 +216,22 @@ public interface Ui23Package extends EPackage
   int LAYOUT = 3;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LAYOUT__NAME = COMPONENT_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Components</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LAYOUT__COMPONENTS = COMPONENT_FEATURE_COUNT + 0;
+  int LAYOUT__COMPONENTS = COMPONENT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Layout</em>' class.
@@ -231,7 +240,7 @@ public interface Ui23Package extends EPackage
    * @generated
    * @ordered
    */
-  int LAYOUT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 1;
+  int LAYOUT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.ui23.ui23.impl.ElementImpl <em>Element</em>}' class.
@@ -244,13 +253,13 @@ public interface Ui23Package extends EPackage
   int ELEMENT = 5;
 
   /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENT__EXP = COMPONENT_FEATURE_COUNT + 0;
+  int ELEMENT__EXPRESSION = COMPONENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Element</em>' class.
@@ -272,13 +281,13 @@ public interface Ui23Package extends EPackage
   int LABEL = 6;
 
   /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LABEL__EXP = ELEMENT__EXP;
+  int LABEL__EXPRESSION = ELEMENT__EXPRESSION;
 
   /**
    * The number of structural features of the '<em>Label</em>' class.
@@ -300,13 +309,13 @@ public interface Ui23Package extends EPackage
   int INPUT_TEXT = 7;
 
   /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INPUT_TEXT__EXP = ELEMENT__EXP;
+  int INPUT_TEXT__EXPRESSION = ELEMENT__EXPRESSION;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -337,13 +346,13 @@ public interface Ui23Package extends EPackage
   int BUTTON = 8;
 
   /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BUTTON__EXP = ELEMENT__EXP;
+  int BUTTON__EXPRESSION = ELEMENT__EXPRESSION;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -383,13 +392,13 @@ public interface Ui23Package extends EPackage
   int FORM_USE__NAME = COMPONENT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Exp</b></em>' containment reference.
+   * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORM_USE__EXP = COMPONENT_FEATURE_COUNT + 1;
+  int FORM_USE__EXPRESSIONS = COMPONENT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Form Use</em>' class.
@@ -1199,6 +1208,17 @@ public interface Ui23Package extends EPackage
   EClass getLayout();
 
   /**
+   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.ui23.ui23.Layout#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see dk.sdu.mmmi.mdsd.ui23.ui23.Layout#getName()
+   * @see #getLayout()
+   * @generated
+   */
+  EAttribute getLayout_Name();
+
+  /**
    * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.ui23.ui23.Layout#getComponents <em>Components</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1230,15 +1250,15 @@ public interface Ui23Package extends EPackage
   EClass getElement();
 
   /**
-   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.ui23.ui23.Element#getExp <em>Exp</em>}'.
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.ui23.ui23.Element#getExpression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Exp</em>'.
-   * @see dk.sdu.mmmi.mdsd.ui23.ui23.Element#getExp()
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see dk.sdu.mmmi.mdsd.ui23.ui23.Element#getExpression()
    * @see #getElement()
    * @generated
    */
-  EReference getElement_Exp();
+  EReference getElement_Expression();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.ui23.ui23.Label <em>Label</em>}'.
@@ -1314,15 +1334,15 @@ public interface Ui23Package extends EPackage
   EAttribute getFormUse_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.ui23.ui23.FormUse#getExp <em>Exp</em>}'.
+   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.ui23.ui23.FormUse#getExpressions <em>Expressions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Exp</em>'.
-   * @see dk.sdu.mmmi.mdsd.ui23.ui23.FormUse#getExp()
+   * @return the meta object for the containment reference list '<em>Expressions</em>'.
+   * @see dk.sdu.mmmi.mdsd.ui23.ui23.FormUse#getExpressions()
    * @see #getFormUse()
    * @generated
    */
-  EReference getFormUse_Exp();
+  EReference getFormUse_Expressions();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.ui23.ui23.Parameter <em>Parameter</em>}'.
@@ -1992,6 +2012,14 @@ public interface Ui23Package extends EPackage
     EClass LAYOUT = eINSTANCE.getLayout();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LAYOUT__NAME = eINSTANCE.getLayout_Name();
+
+    /**
      * The meta object literal for the '<em><b>Components</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2020,12 +2048,12 @@ public interface Ui23Package extends EPackage
     EClass ELEMENT = eINSTANCE.getElement();
 
     /**
-     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ELEMENT__EXP = eINSTANCE.getElement_Exp();
+    EReference ELEMENT__EXPRESSION = eINSTANCE.getElement_Expression();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.ui23.ui23.impl.LabelImpl <em>Label</em>}' class.
@@ -2092,12 +2120,12 @@ public interface Ui23Package extends EPackage
     EAttribute FORM_USE__NAME = eINSTANCE.getFormUse_Name();
 
     /**
-     * The meta object literal for the '<em><b>Exp</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FORM_USE__EXP = eINSTANCE.getFormUse_Exp();
+    EReference FORM_USE__EXPRESSIONS = eINSTANCE.getFormUse_Expressions();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.ui23.ui23.impl.ParameterImpl <em>Parameter</em>}' class.

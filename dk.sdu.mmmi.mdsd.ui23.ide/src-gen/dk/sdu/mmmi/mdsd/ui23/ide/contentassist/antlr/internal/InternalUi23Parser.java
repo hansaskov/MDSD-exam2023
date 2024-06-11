@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalUi23Parser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'row'", "'column'", "'title'", "'function'", "'('", "')'", "':'", "','", "'form'", "'{'", "'}'", "'label'", "'input'", "'button'", "'*'", "'boolean'", "'string'", "'number'", "'&&'", "'||'", "'=='", "'!='", "'<'", "'<='", "'>'", "'>='", "'&'", "'+'", "'-'", "'/'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'title'", "'function'", "'('", "')'", "':'", "','", "'form'", "'{'", "'}'", "'label'", "'input'", "'button'", "'*'", "'boolean'", "'string'", "'number'", "'&&'", "'||'", "'=='", "'!='", "'<'", "'<='", "'>'", "'>='", "'&'", "'+'", "'-'", "'/'", "'row'", "'column'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -1562,20 +1562,20 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Layout__Alternatives_0"
-    // InternalUi23.g:527:1: rule__Layout__Alternatives_0 : ( ( 'row' ) | ( 'column' ) );
+    // InternalUi23.g:527:1: rule__Layout__Alternatives_0 : ( ( ( rule__Layout__NameAssignment_0_0 ) ) | ( ( rule__Layout__NameAssignment_0_1 ) ) );
     public final void rule__Layout__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:531:1: ( ( 'row' ) | ( 'column' ) )
+            // InternalUi23.g:531:1: ( ( ( rule__Layout__NameAssignment_0_0 ) ) | ( ( rule__Layout__NameAssignment_0_1 ) ) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==11) ) {
+            if ( (LA1_0==39) ) {
                 alt1=1;
             }
-            else if ( (LA1_0==12) ) {
+            else if ( (LA1_0==40) ) {
                 alt1=2;
             }
             else {
@@ -1586,14 +1586,24 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalUi23.g:532:2: ( 'row' )
+                    // InternalUi23.g:532:2: ( ( rule__Layout__NameAssignment_0_0 ) )
                     {
-                    // InternalUi23.g:532:2: ( 'row' )
-                    // InternalUi23.g:533:3: 'row'
+                    // InternalUi23.g:532:2: ( ( rule__Layout__NameAssignment_0_0 ) )
+                    // InternalUi23.g:533:3: ( rule__Layout__NameAssignment_0_0 )
                     {
-                     before(grammarAccess.getLayoutAccess().getRowKeyword_0_0()); 
-                    match(input,11,FOLLOW_2); 
-                     after(grammarAccess.getLayoutAccess().getRowKeyword_0_0()); 
+                     before(grammarAccess.getLayoutAccess().getNameAssignment_0_0()); 
+                    // InternalUi23.g:534:3: ( rule__Layout__NameAssignment_0_0 )
+                    // InternalUi23.g:534:4: rule__Layout__NameAssignment_0_0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Layout__NameAssignment_0_0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getLayoutAccess().getNameAssignment_0_0()); 
 
                     }
 
@@ -1601,14 +1611,24 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalUi23.g:538:2: ( 'column' )
+                    // InternalUi23.g:538:2: ( ( rule__Layout__NameAssignment_0_1 ) )
                     {
-                    // InternalUi23.g:538:2: ( 'column' )
-                    // InternalUi23.g:539:3: 'column'
+                    // InternalUi23.g:538:2: ( ( rule__Layout__NameAssignment_0_1 ) )
+                    // InternalUi23.g:539:3: ( rule__Layout__NameAssignment_0_1 )
                     {
-                     before(grammarAccess.getLayoutAccess().getColumnKeyword_0_1()); 
-                    match(input,12,FOLLOW_2); 
-                     after(grammarAccess.getLayoutAccess().getColumnKeyword_0_1()); 
+                     before(grammarAccess.getLayoutAccess().getNameAssignment_0_1()); 
+                    // InternalUi23.g:540:3: ( rule__Layout__NameAssignment_0_1 )
+                    // InternalUi23.g:540:4: rule__Layout__NameAssignment_0_1
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Layout__NameAssignment_0_1();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getLayoutAccess().getNameAssignment_0_1()); 
 
                     }
 
@@ -1642,15 +1662,15 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:552:1: ( ( ruleLayout ) | ( ruleElement ) | ( ruleFormUse ) )
             int alt2=3;
             switch ( input.LA(1) ) {
-            case 11:
-            case 12:
+            case 39:
+            case 40:
                 {
                 alt2=1;
                 }
                 break;
+            case 20:
+            case 21:
             case 22:
-            case 23:
-            case 24:
                 {
                 alt2=2;
                 }
@@ -1752,17 +1772,17 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:579:1: ( ( ruleLabel ) | ( ruleInputText ) | ( ruleButton ) )
             int alt3=3;
             switch ( input.LA(1) ) {
-            case 22:
+            case 20:
                 {
                 alt3=1;
                 }
                 break;
-            case 23:
+            case 21:
                 {
                 alt3=2;
                 }
                 break;
-            case 24:
+            case 22:
                 {
                 alt3=3;
                 }
@@ -1859,17 +1879,17 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:606:1: ( ( ( rule__Type__Group_0__0 ) ) | ( ( rule__Type__Group_1__0 ) ) | ( ( rule__Type__Group_2__0 ) ) )
             int alt4=3;
             switch ( input.LA(1) ) {
-            case 26:
+            case 24:
                 {
                 alt4=1;
                 }
                 break;
-            case 27:
+            case 25:
                 {
                 alt4=2;
                 }
                 break;
-            case 28:
+            case 26:
                 {
                 alt4=3;
                 }
@@ -1985,10 +2005,10 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==29) ) {
+            if ( (LA5_0==27) ) {
                 alt5=1;
             }
-            else if ( (LA5_0==30) ) {
+            else if ( (LA5_0==28) ) {
                 alt5=2;
             }
             else {
@@ -2076,10 +2096,10 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==31) ) {
+            if ( (LA6_0==29) ) {
                 alt6=1;
             }
-            else if ( (LA6_0==32) ) {
+            else if ( (LA6_0==30) ) {
                 alt6=2;
             }
             else {
@@ -2166,22 +2186,22 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:675:1: ( ( ( rule__Compare__Group_1_0_0__0 ) ) | ( ( rule__Compare__Group_1_0_1__0 ) ) | ( ( rule__Compare__Group_1_0_2__0 ) ) | ( ( rule__Compare__Group_1_0_3__0 ) ) )
             int alt7=4;
             switch ( input.LA(1) ) {
-            case 33:
+            case 31:
                 {
                 alt7=1;
                 }
                 break;
-            case 34:
+            case 32:
                 {
                 alt7=2;
                 }
                 break;
-            case 35:
+            case 33:
                 {
                 alt7=3;
                 }
                 break;
-            case 36:
+            case 34:
                 {
                 alt7=4;
                 }
@@ -2322,10 +2342,10 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==38) ) {
+            if ( (LA8_0==36) ) {
                 alt8=1;
             }
-            else if ( (LA8_0==39) ) {
+            else if ( (LA8_0==37) ) {
                 alt8=2;
             }
             else {
@@ -2413,10 +2433,10 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( (LA9_0==25) ) {
+            if ( (LA9_0==23) ) {
                 alt9=1;
             }
-            else if ( (LA9_0==40) ) {
+            else if ( (LA9_0==38) ) {
                 alt9=2;
             }
             else {
@@ -2513,14 +2533,14 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
                 alt10=2;
                 }
                 break;
-            case 15:
+            case 13:
                 {
                 alt10=3;
                 }
                 break;
+            case 24:
+            case 25:
             case 26:
-            case 27:
-            case 28:
                 {
                 alt10=4;
                 }
@@ -2696,7 +2716,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:797:2: 'title'
             {
              before(grammarAccess.getUIAccess().getTitleKeyword_0()); 
-            match(input,13,FOLLOW_2); 
+            match(input,11,FOLLOW_2); 
              after(grammarAccess.getUIAccess().getTitleKeyword_0()); 
 
             }
@@ -2862,7 +2882,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
                 int alt11=2;
                 int LA11_0 = input.LA(1);
 
-                if ( (LA11_0==14) ) {
+                if ( (LA11_0==12) ) {
                     alt11=1;
                 }
 
@@ -2960,7 +2980,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
                 int alt12=2;
                 int LA12_0 = input.LA(1);
 
-                if ( (LA12_0==19) ) {
+                if ( (LA12_0==17) ) {
                     alt12=1;
                 }
 
@@ -3057,7 +3077,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:905:2: 'function'
             {
              before(grammarAccess.getFunctionAccess().getFunctionKeyword_0()); 
-            match(input,14,FOLLOW_2); 
+            match(input,12,FOLLOW_2); 
              after(grammarAccess.getFunctionAccess().getFunctionKeyword_0()); 
 
             }
@@ -3217,7 +3237,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:959:2: '('
             {
              before(grammarAccess.getFunctionAccess().getLeftParenthesisKeyword_2()); 
-            match(input,15,FOLLOW_2); 
+            match(input,13,FOLLOW_2); 
              after(grammarAccess.getFunctionAccess().getLeftParenthesisKeyword_2()); 
 
             }
@@ -3296,7 +3316,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             int alt13=2;
             int LA13_0 = input.LA(1);
 
-            if ( ((LA13_0>=26 && LA13_0<=28)) ) {
+            if ( ((LA13_0>=24 && LA13_0<=26)) ) {
                 alt13=1;
             }
             switch (alt13) {
@@ -3388,7 +3408,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:1013:2: ')'
             {
              before(grammarAccess.getFunctionAccess().getRightParenthesisKeyword_4()); 
-            match(input,16,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getFunctionAccess().getRightParenthesisKeyword_4()); 
 
             }
@@ -3463,7 +3483,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:1040:2: ':'
             {
              before(grammarAccess.getFunctionAccess().getColonKeyword_5()); 
-            match(input,17,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getFunctionAccess().getColonKeyword_5()); 
 
             }
@@ -3704,7 +3724,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
                 int alt14=2;
                 int LA14_0 = input.LA(1);
 
-                if ( (LA14_0==18) ) {
+                if ( (LA14_0==16) ) {
                     alt14=1;
                 }
 
@@ -3801,7 +3821,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:1148:2: ','
             {
              before(grammarAccess.getFunctionAccess().getCommaKeyword_3_1_0()); 
-            match(input,18,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getFunctionAccess().getCommaKeyword_3_1_0()); 
 
             }
@@ -3956,7 +3976,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:1202:2: 'form'
             {
              before(grammarAccess.getFormAccess().getFormKeyword_0()); 
-            match(input,19,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getFormAccess().getFormKeyword_0()); 
 
             }
@@ -4120,7 +4140,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             int alt15=2;
             int LA15_0 = input.LA(1);
 
-            if ( (LA15_0==15) ) {
+            if ( (LA15_0==13) ) {
                 alt15=1;
             }
             switch (alt15) {
@@ -4212,7 +4232,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:1283:2: '{'
             {
              before(grammarAccess.getFormAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,20,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getFormAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
@@ -4367,7 +4387,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:1336:2: '}'
             {
              before(grammarAccess.getFormAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,21,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getFormAccess().getRightCurlyBracketKeyword_5()); 
 
             }
@@ -4442,7 +4462,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:1364:2: '('
             {
              before(grammarAccess.getFormAccess().getLeftParenthesisKeyword_2_0()); 
-            match(input,15,FOLLOW_2); 
+            match(input,13,FOLLOW_2); 
              after(grammarAccess.getFormAccess().getLeftParenthesisKeyword_2_0()); 
 
             }
@@ -4608,7 +4628,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:1417:2: ')'
             {
              before(grammarAccess.getFormAccess().getRightParenthesisKeyword_2_2()); 
-            match(input,16,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getFormAccess().getRightParenthesisKeyword_2_2()); 
 
             }
@@ -4769,7 +4789,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
                 int alt17=2;
                 int LA17_0 = input.LA(1);
 
-                if ( (LA17_0==18) ) {
+                if ( (LA17_0==16) ) {
                     alt17=1;
                 }
 
@@ -4866,7 +4886,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:1499:2: ','
             {
              before(grammarAccess.getFormAccess().getCommaKeyword_2_1_1_0()); 
-            match(input,18,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getFormAccess().getCommaKeyword_2_1_1_0()); 
 
             }
@@ -5106,7 +5126,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:1580:2: '{'
             {
              before(grammarAccess.getLayoutAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,20,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getLayoutAccess().getLeftCurlyBracketKeyword_1()); 
 
             }
@@ -5187,7 +5207,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
                 int alt18=2;
                 int LA18_0 = input.LA(1);
 
-                if ( (LA18_0==RULE_ID||(LA18_0>=11 && LA18_0<=12)||(LA18_0>=22 && LA18_0<=24)) ) {
+                if ( (LA18_0==RULE_ID||(LA18_0>=20 && LA18_0<=22)||(LA18_0>=39 && LA18_0<=40)) ) {
                     alt18=1;
                 }
 
@@ -5279,7 +5299,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:1633:2: '}'
             {
              before(grammarAccess.getLayoutAccess().getRightCurlyBracketKeyword_3()); 
-            match(input,21,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getLayoutAccess().getRightCurlyBracketKeyword_3()); 
 
             }
@@ -5354,7 +5374,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:1661:2: 'label'
             {
              before(grammarAccess.getLabelAccess().getLabelKeyword_0()); 
-            match(input,22,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getLabelAccess().getLabelKeyword_0()); 
 
             }
@@ -5429,7 +5449,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:1688:2: ':'
             {
              before(grammarAccess.getLabelAccess().getColonKeyword_1()); 
-            match(input,17,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getLabelAccess().getColonKeyword_1()); 
 
             }
@@ -5486,31 +5506,31 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Label__Group__2__Impl"
-    // InternalUi23.g:1708:1: rule__Label__Group__2__Impl : ( ( rule__Label__ExpAssignment_2 ) ) ;
+    // InternalUi23.g:1708:1: rule__Label__Group__2__Impl : ( ( rule__Label__ExpressionAssignment_2 ) ) ;
     public final void rule__Label__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:1712:1: ( ( ( rule__Label__ExpAssignment_2 ) ) )
-            // InternalUi23.g:1713:1: ( ( rule__Label__ExpAssignment_2 ) )
+            // InternalUi23.g:1712:1: ( ( ( rule__Label__ExpressionAssignment_2 ) ) )
+            // InternalUi23.g:1713:1: ( ( rule__Label__ExpressionAssignment_2 ) )
             {
-            // InternalUi23.g:1713:1: ( ( rule__Label__ExpAssignment_2 ) )
-            // InternalUi23.g:1714:2: ( rule__Label__ExpAssignment_2 )
+            // InternalUi23.g:1713:1: ( ( rule__Label__ExpressionAssignment_2 ) )
+            // InternalUi23.g:1714:2: ( rule__Label__ExpressionAssignment_2 )
             {
-             before(grammarAccess.getLabelAccess().getExpAssignment_2()); 
-            // InternalUi23.g:1715:2: ( rule__Label__ExpAssignment_2 )
-            // InternalUi23.g:1715:3: rule__Label__ExpAssignment_2
+             before(grammarAccess.getLabelAccess().getExpressionAssignment_2()); 
+            // InternalUi23.g:1715:2: ( rule__Label__ExpressionAssignment_2 )
+            // InternalUi23.g:1715:3: rule__Label__ExpressionAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__Label__ExpAssignment_2();
+            rule__Label__ExpressionAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getLabelAccess().getExpAssignment_2()); 
+             after(grammarAccess.getLabelAccess().getExpressionAssignment_2()); 
 
             }
 
@@ -5584,7 +5604,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:1742:2: 'input'
             {
              before(grammarAccess.getInputTextAccess().getInputKeyword_0()); 
-            match(input,23,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getInputTextAccess().getInputKeyword_0()); 
 
             }
@@ -5744,7 +5764,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:1796:2: ':'
             {
              before(grammarAccess.getInputTextAccess().getColonKeyword_2()); 
-            match(input,17,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getInputTextAccess().getColonKeyword_2()); 
 
             }
@@ -5801,31 +5821,31 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InputText__Group__3__Impl"
-    // InternalUi23.g:1816:1: rule__InputText__Group__3__Impl : ( ( rule__InputText__ExpAssignment_3 ) ) ;
+    // InternalUi23.g:1816:1: rule__InputText__Group__3__Impl : ( ( rule__InputText__ExpressionAssignment_3 ) ) ;
     public final void rule__InputText__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:1820:1: ( ( ( rule__InputText__ExpAssignment_3 ) ) )
-            // InternalUi23.g:1821:1: ( ( rule__InputText__ExpAssignment_3 ) )
+            // InternalUi23.g:1820:1: ( ( ( rule__InputText__ExpressionAssignment_3 ) ) )
+            // InternalUi23.g:1821:1: ( ( rule__InputText__ExpressionAssignment_3 ) )
             {
-            // InternalUi23.g:1821:1: ( ( rule__InputText__ExpAssignment_3 ) )
-            // InternalUi23.g:1822:2: ( rule__InputText__ExpAssignment_3 )
+            // InternalUi23.g:1821:1: ( ( rule__InputText__ExpressionAssignment_3 ) )
+            // InternalUi23.g:1822:2: ( rule__InputText__ExpressionAssignment_3 )
             {
-             before(grammarAccess.getInputTextAccess().getExpAssignment_3()); 
-            // InternalUi23.g:1823:2: ( rule__InputText__ExpAssignment_3 )
-            // InternalUi23.g:1823:3: rule__InputText__ExpAssignment_3
+             before(grammarAccess.getInputTextAccess().getExpressionAssignment_3()); 
+            // InternalUi23.g:1823:2: ( rule__InputText__ExpressionAssignment_3 )
+            // InternalUi23.g:1823:3: rule__InputText__ExpressionAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__InputText__ExpAssignment_3();
+            rule__InputText__ExpressionAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getInputTextAccess().getExpAssignment_3()); 
+             after(grammarAccess.getInputTextAccess().getExpressionAssignment_3()); 
 
             }
 
@@ -5899,7 +5919,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:1850:2: 'button'
             {
              before(grammarAccess.getButtonAccess().getButtonKeyword_0()); 
-            match(input,24,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getButtonAccess().getButtonKeyword_0()); 
 
             }
@@ -5978,14 +5998,14 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             int alt19=2;
             int LA19_0 = input.LA(1);
 
-            if ( (LA19_0==25) ) {
+            if ( (LA19_0==23) ) {
                 alt19=1;
             }
             switch (alt19) {
                 case 1 :
                     // InternalUi23.g:1878:3: '*'
                     {
-                    match(input,25,FOLLOW_2); 
+                    match(input,23,FOLLOW_2); 
 
                     }
                     break;
@@ -6151,7 +6171,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:1931:2: ':'
             {
              before(grammarAccess.getButtonAccess().getColonKeyword_3()); 
-            match(input,17,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getButtonAccess().getColonKeyword_3()); 
 
             }
@@ -6208,31 +6228,31 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Button__Group__4__Impl"
-    // InternalUi23.g:1951:1: rule__Button__Group__4__Impl : ( ( rule__Button__ExpAssignment_4 ) ) ;
+    // InternalUi23.g:1951:1: rule__Button__Group__4__Impl : ( ( rule__Button__ExpressionAssignment_4 ) ) ;
     public final void rule__Button__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:1955:1: ( ( ( rule__Button__ExpAssignment_4 ) ) )
-            // InternalUi23.g:1956:1: ( ( rule__Button__ExpAssignment_4 ) )
+            // InternalUi23.g:1955:1: ( ( ( rule__Button__ExpressionAssignment_4 ) ) )
+            // InternalUi23.g:1956:1: ( ( rule__Button__ExpressionAssignment_4 ) )
             {
-            // InternalUi23.g:1956:1: ( ( rule__Button__ExpAssignment_4 ) )
-            // InternalUi23.g:1957:2: ( rule__Button__ExpAssignment_4 )
+            // InternalUi23.g:1956:1: ( ( rule__Button__ExpressionAssignment_4 ) )
+            // InternalUi23.g:1957:2: ( rule__Button__ExpressionAssignment_4 )
             {
-             before(grammarAccess.getButtonAccess().getExpAssignment_4()); 
-            // InternalUi23.g:1958:2: ( rule__Button__ExpAssignment_4 )
-            // InternalUi23.g:1958:3: rule__Button__ExpAssignment_4
+             before(grammarAccess.getButtonAccess().getExpressionAssignment_4()); 
+            // InternalUi23.g:1958:2: ( rule__Button__ExpressionAssignment_4 )
+            // InternalUi23.g:1958:3: rule__Button__ExpressionAssignment_4
             {
             pushFollow(FOLLOW_2);
-            rule__Button__ExpAssignment_4();
+            rule__Button__ExpressionAssignment_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getButtonAccess().getExpAssignment_4()); 
+             after(grammarAccess.getButtonAccess().getExpressionAssignment_4()); 
 
             }
 
@@ -6391,7 +6411,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:2012:2: '('
             {
              before(grammarAccess.getFormUseAccess().getLeftParenthesisKeyword_1()); 
-            match(input,15,FOLLOW_2); 
+            match(input,13,FOLLOW_2); 
              after(grammarAccess.getFormUseAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -6470,7 +6490,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             int alt20=2;
             int LA20_0 = input.LA(1);
 
-            if ( ((LA20_0>=RULE_INT && LA20_0<=RULE_STRING)||LA20_0==15||(LA20_0>=26 && LA20_0<=28)) ) {
+            if ( ((LA20_0>=RULE_INT && LA20_0<=RULE_STRING)||LA20_0==13||(LA20_0>=24 && LA20_0<=26)) ) {
                 alt20=1;
             }
             switch (alt20) {
@@ -6557,7 +6577,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:2065:2: ')'
             {
              before(grammarAccess.getFormUseAccess().getRightParenthesisKeyword_3()); 
-            match(input,16,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getFormUseAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -6619,31 +6639,31 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FormUse__Group_2__0__Impl"
-    // InternalUi23.g:2087:1: rule__FormUse__Group_2__0__Impl : ( ( rule__FormUse__ExpAssignment_2_0 ) ) ;
+    // InternalUi23.g:2087:1: rule__FormUse__Group_2__0__Impl : ( ( rule__FormUse__ExpressionsAssignment_2_0 ) ) ;
     public final void rule__FormUse__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:2091:1: ( ( ( rule__FormUse__ExpAssignment_2_0 ) ) )
-            // InternalUi23.g:2092:1: ( ( rule__FormUse__ExpAssignment_2_0 ) )
+            // InternalUi23.g:2091:1: ( ( ( rule__FormUse__ExpressionsAssignment_2_0 ) ) )
+            // InternalUi23.g:2092:1: ( ( rule__FormUse__ExpressionsAssignment_2_0 ) )
             {
-            // InternalUi23.g:2092:1: ( ( rule__FormUse__ExpAssignment_2_0 ) )
-            // InternalUi23.g:2093:2: ( rule__FormUse__ExpAssignment_2_0 )
+            // InternalUi23.g:2092:1: ( ( rule__FormUse__ExpressionsAssignment_2_0 ) )
+            // InternalUi23.g:2093:2: ( rule__FormUse__ExpressionsAssignment_2_0 )
             {
-             before(grammarAccess.getFormUseAccess().getExpAssignment_2_0()); 
-            // InternalUi23.g:2094:2: ( rule__FormUse__ExpAssignment_2_0 )
-            // InternalUi23.g:2094:3: rule__FormUse__ExpAssignment_2_0
+             before(grammarAccess.getFormUseAccess().getExpressionsAssignment_2_0()); 
+            // InternalUi23.g:2094:2: ( rule__FormUse__ExpressionsAssignment_2_0 )
+            // InternalUi23.g:2094:3: rule__FormUse__ExpressionsAssignment_2_0
             {
             pushFollow(FOLLOW_2);
-            rule__FormUse__ExpAssignment_2_0();
+            rule__FormUse__ExpressionsAssignment_2_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFormUseAccess().getExpAssignment_2_0()); 
+             after(grammarAccess.getFormUseAccess().getExpressionsAssignment_2_0()); 
 
             }
 
@@ -6718,7 +6738,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
                 int alt21=2;
                 int LA21_0 = input.LA(1);
 
-                if ( (LA21_0==18) ) {
+                if ( (LA21_0==16) ) {
                     alt21=1;
                 }
 
@@ -6815,7 +6835,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:2147:2: ','
             {
              before(grammarAccess.getFormUseAccess().getCommaKeyword_2_1_0()); 
-            match(input,18,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getFormUseAccess().getCommaKeyword_2_1_0()); 
 
             }
@@ -6872,31 +6892,31 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FormUse__Group_2_1__1__Impl"
-    // InternalUi23.g:2167:1: rule__FormUse__Group_2_1__1__Impl : ( ( rule__FormUse__ExpAssignment_2_1_1 ) ) ;
+    // InternalUi23.g:2167:1: rule__FormUse__Group_2_1__1__Impl : ( ( rule__FormUse__ExpressionsAssignment_2_1_1 ) ) ;
     public final void rule__FormUse__Group_2_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:2171:1: ( ( ( rule__FormUse__ExpAssignment_2_1_1 ) ) )
-            // InternalUi23.g:2172:1: ( ( rule__FormUse__ExpAssignment_2_1_1 ) )
+            // InternalUi23.g:2171:1: ( ( ( rule__FormUse__ExpressionsAssignment_2_1_1 ) ) )
+            // InternalUi23.g:2172:1: ( ( rule__FormUse__ExpressionsAssignment_2_1_1 ) )
             {
-            // InternalUi23.g:2172:1: ( ( rule__FormUse__ExpAssignment_2_1_1 ) )
-            // InternalUi23.g:2173:2: ( rule__FormUse__ExpAssignment_2_1_1 )
+            // InternalUi23.g:2172:1: ( ( rule__FormUse__ExpressionsAssignment_2_1_1 ) )
+            // InternalUi23.g:2173:2: ( rule__FormUse__ExpressionsAssignment_2_1_1 )
             {
-             before(grammarAccess.getFormUseAccess().getExpAssignment_2_1_1()); 
-            // InternalUi23.g:2174:2: ( rule__FormUse__ExpAssignment_2_1_1 )
-            // InternalUi23.g:2174:3: rule__FormUse__ExpAssignment_2_1_1
+             before(grammarAccess.getFormUseAccess().getExpressionsAssignment_2_1_1()); 
+            // InternalUi23.g:2174:2: ( rule__FormUse__ExpressionsAssignment_2_1_1 )
+            // InternalUi23.g:2174:3: rule__FormUse__ExpressionsAssignment_2_1_1
             {
             pushFollow(FOLLOW_2);
-            rule__FormUse__ExpAssignment_2_1_1();
+            rule__FormUse__ExpressionsAssignment_2_1_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFormUseAccess().getExpAssignment_2_1_1()); 
+             after(grammarAccess.getFormUseAccess().getExpressionsAssignment_2_1_1()); 
 
             }
 
@@ -7055,7 +7075,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:2228:2: ':'
             {
              before(grammarAccess.getParameterAccess().getColonKeyword_1()); 
-            match(input,17,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getParameterAccess().getColonKeyword_1()); 
 
             }
@@ -7280,7 +7300,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:2308:2: 'boolean'
             {
              before(grammarAccess.getTypeAccess().getBooleanKeyword_0_1()); 
-            match(input,26,FOLLOW_2); 
+            match(input,24,FOLLOW_2); 
              after(grammarAccess.getTypeAccess().getBooleanKeyword_0_1()); 
 
             }
@@ -7425,7 +7445,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:2362:2: 'string'
             {
              before(grammarAccess.getTypeAccess().getStringKeyword_1_1()); 
-            match(input,27,FOLLOW_2); 
+            match(input,25,FOLLOW_2); 
              after(grammarAccess.getTypeAccess().getStringKeyword_1_1()); 
 
             }
@@ -7570,7 +7590,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:2416:2: 'number'
             {
              before(grammarAccess.getTypeAccess().getNumberKeyword_2_1()); 
-            match(input,28,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getTypeAccess().getNumberKeyword_2_1()); 
 
             }
@@ -7725,7 +7745,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
                 int alt22=2;
                 int LA22_0 = input.LA(1);
 
-                if ( ((LA22_0>=29 && LA22_0<=30)) ) {
+                if ( ((LA22_0>=27 && LA22_0<=28)) ) {
                     alt22=1;
                 }
 
@@ -8057,7 +8077,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:2578:2: '&&'
             {
              before(grammarAccess.getExpAccess().getAmpersandAmpersandKeyword_1_0_0_1()); 
-            match(input,29,FOLLOW_2); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getExpAccess().getAmpersandAmpersandKeyword_1_0_0_1()); 
 
             }
@@ -8202,7 +8222,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:2632:2: '||'
             {
              before(grammarAccess.getExpAccess().getVerticalLineVerticalLineKeyword_1_0_1_1()); 
-            match(input,30,FOLLOW_2); 
+            match(input,28,FOLLOW_2); 
              after(grammarAccess.getExpAccess().getVerticalLineVerticalLineKeyword_1_0_1_1()); 
 
             }
@@ -8357,7 +8377,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
                 int alt23=2;
                 int LA23_0 = input.LA(1);
 
-                if ( ((LA23_0>=31 && LA23_0<=32)) ) {
+                if ( ((LA23_0>=29 && LA23_0<=30)) ) {
                     alt23=1;
                 }
 
@@ -8689,7 +8709,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:2794:2: '=='
             {
              before(grammarAccess.getEqualityAccess().getEqualsSignEqualsSignKeyword_1_0_0_1()); 
-            match(input,31,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getEqualityAccess().getEqualsSignEqualsSignKeyword_1_0_0_1()); 
 
             }
@@ -8834,7 +8854,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:2848:2: '!='
             {
              before(grammarAccess.getEqualityAccess().getExclamationMarkEqualsSignKeyword_1_0_1_1()); 
-            match(input,32,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getEqualityAccess().getExclamationMarkEqualsSignKeyword_1_0_1_1()); 
 
             }
@@ -8989,7 +9009,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
                 int alt24=2;
                 int LA24_0 = input.LA(1);
 
-                if ( ((LA24_0>=33 && LA24_0<=36)) ) {
+                if ( ((LA24_0>=31 && LA24_0<=34)) ) {
                     alt24=1;
                 }
 
@@ -9321,7 +9341,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:3010:2: '<'
             {
              before(grammarAccess.getCompareAccess().getLessThanSignKeyword_1_0_0_1()); 
-            match(input,33,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getCompareAccess().getLessThanSignKeyword_1_0_0_1()); 
 
             }
@@ -9466,7 +9486,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:3064:2: '<='
             {
              before(grammarAccess.getCompareAccess().getLessThanSignEqualsSignKeyword_1_0_1_1()); 
-            match(input,34,FOLLOW_2); 
+            match(input,32,FOLLOW_2); 
              after(grammarAccess.getCompareAccess().getLessThanSignEqualsSignKeyword_1_0_1_1()); 
 
             }
@@ -9611,7 +9631,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:3118:2: '>'
             {
              before(grammarAccess.getCompareAccess().getGreaterThanSignKeyword_1_0_2_1()); 
-            match(input,35,FOLLOW_2); 
+            match(input,33,FOLLOW_2); 
              after(grammarAccess.getCompareAccess().getGreaterThanSignKeyword_1_0_2_1()); 
 
             }
@@ -9756,7 +9776,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:3172:2: '>='
             {
              before(grammarAccess.getCompareAccess().getGreaterThanSignEqualsSignKeyword_1_0_3_1()); 
-            match(input,36,FOLLOW_2); 
+            match(input,34,FOLLOW_2); 
              after(grammarAccess.getCompareAccess().getGreaterThanSignEqualsSignKeyword_1_0_3_1()); 
 
             }
@@ -9911,7 +9931,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
                 int alt25=2;
                 int LA25_0 = input.LA(1);
 
-                if ( (LA25_0==37) ) {
+                if ( (LA25_0==35) ) {
                     alt25=1;
                 }
 
@@ -10243,7 +10263,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:3334:2: '&'
             {
              before(grammarAccess.getConcatAccess().getAmpersandKeyword_1_0_1()); 
-            match(input,37,FOLLOW_2); 
+            match(input,35,FOLLOW_2); 
              after(grammarAccess.getConcatAccess().getAmpersandKeyword_1_0_1()); 
 
             }
@@ -10398,7 +10418,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
                 int alt26=2;
                 int LA26_0 = input.LA(1);
 
-                if ( ((LA26_0>=38 && LA26_0<=39)) ) {
+                if ( ((LA26_0>=36 && LA26_0<=37)) ) {
                     alt26=1;
                 }
 
@@ -10730,7 +10750,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:3496:2: '+'
             {
              before(grammarAccess.getAddMinusAccess().getPlusSignKeyword_1_0_0_1()); 
-            match(input,38,FOLLOW_2); 
+            match(input,36,FOLLOW_2); 
              after(grammarAccess.getAddMinusAccess().getPlusSignKeyword_1_0_0_1()); 
 
             }
@@ -10875,7 +10895,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:3550:2: '-'
             {
              before(grammarAccess.getAddMinusAccess().getHyphenMinusKeyword_1_0_1_1()); 
-            match(input,39,FOLLOW_2); 
+            match(input,37,FOLLOW_2); 
              after(grammarAccess.getAddMinusAccess().getHyphenMinusKeyword_1_0_1_1()); 
 
             }
@@ -11030,7 +11050,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
                 int alt27=2;
                 int LA27_0 = input.LA(1);
 
-                if ( (LA27_0==25||LA27_0==40) ) {
+                if ( (LA27_0==23||LA27_0==38) ) {
                     alt27=1;
                 }
 
@@ -11362,7 +11382,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:3712:2: '*'
             {
              before(grammarAccess.getFactorAccess().getAsteriskKeyword_1_0_0_1()); 
-            match(input,25,FOLLOW_2); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getFactorAccess().getAsteriskKeyword_1_0_0_1()); 
 
             }
@@ -11507,7 +11527,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:3766:2: '/'
             {
              before(grammarAccess.getFactorAccess().getSolidusKeyword_1_0_1_1()); 
-            match(input,40,FOLLOW_2); 
+            match(input,38,FOLLOW_2); 
              after(grammarAccess.getFactorAccess().getSolidusKeyword_1_0_1_1()); 
 
             }
@@ -11892,7 +11912,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:3902:2: '('
             {
              before(grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_2_0()); 
-            match(input,15,FOLLOW_2); 
+            match(input,13,FOLLOW_2); 
              after(grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_2_0()); 
 
             }
@@ -12041,7 +12061,7 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
             // InternalUi23.g:3955:2: ')'
             {
              before(grammarAccess.getPrimaryAccess().getRightParenthesisKeyword_2_2()); 
-            match(input,16,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getPrimaryAccess().getRightParenthesisKeyword_2_2()); 
 
             }
@@ -12503,18 +12523,108 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Form__LayoutAssignment_4"
 
 
+    // $ANTLR start "rule__Layout__NameAssignment_0_0"
+    // InternalUi23.g:4130:1: rule__Layout__NameAssignment_0_0 : ( ( 'row' ) ) ;
+    public final void rule__Layout__NameAssignment_0_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUi23.g:4134:1: ( ( ( 'row' ) ) )
+            // InternalUi23.g:4135:2: ( ( 'row' ) )
+            {
+            // InternalUi23.g:4135:2: ( ( 'row' ) )
+            // InternalUi23.g:4136:3: ( 'row' )
+            {
+             before(grammarAccess.getLayoutAccess().getNameRowKeyword_0_0_0()); 
+            // InternalUi23.g:4137:3: ( 'row' )
+            // InternalUi23.g:4138:4: 'row'
+            {
+             before(grammarAccess.getLayoutAccess().getNameRowKeyword_0_0_0()); 
+            match(input,39,FOLLOW_2); 
+             after(grammarAccess.getLayoutAccess().getNameRowKeyword_0_0_0()); 
+
+            }
+
+             after(grammarAccess.getLayoutAccess().getNameRowKeyword_0_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Layout__NameAssignment_0_0"
+
+
+    // $ANTLR start "rule__Layout__NameAssignment_0_1"
+    // InternalUi23.g:4149:1: rule__Layout__NameAssignment_0_1 : ( ( 'column' ) ) ;
+    public final void rule__Layout__NameAssignment_0_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalUi23.g:4153:1: ( ( ( 'column' ) ) )
+            // InternalUi23.g:4154:2: ( ( 'column' ) )
+            {
+            // InternalUi23.g:4154:2: ( ( 'column' ) )
+            // InternalUi23.g:4155:3: ( 'column' )
+            {
+             before(grammarAccess.getLayoutAccess().getNameColumnKeyword_0_1_0()); 
+            // InternalUi23.g:4156:3: ( 'column' )
+            // InternalUi23.g:4157:4: 'column'
+            {
+             before(grammarAccess.getLayoutAccess().getNameColumnKeyword_0_1_0()); 
+            match(input,40,FOLLOW_2); 
+             after(grammarAccess.getLayoutAccess().getNameColumnKeyword_0_1_0()); 
+
+            }
+
+             after(grammarAccess.getLayoutAccess().getNameColumnKeyword_0_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Layout__NameAssignment_0_1"
+
+
     // $ANTLR start "rule__Layout__ComponentsAssignment_2"
-    // InternalUi23.g:4130:1: rule__Layout__ComponentsAssignment_2 : ( ruleComponent ) ;
+    // InternalUi23.g:4168:1: rule__Layout__ComponentsAssignment_2 : ( ruleComponent ) ;
     public final void rule__Layout__ComponentsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:4134:1: ( ( ruleComponent ) )
-            // InternalUi23.g:4135:2: ( ruleComponent )
+            // InternalUi23.g:4172:1: ( ( ruleComponent ) )
+            // InternalUi23.g:4173:2: ( ruleComponent )
             {
-            // InternalUi23.g:4135:2: ( ruleComponent )
-            // InternalUi23.g:4136:3: ruleComponent
+            // InternalUi23.g:4173:2: ( ruleComponent )
+            // InternalUi23.g:4174:3: ruleComponent
             {
              before(grammarAccess.getLayoutAccess().getComponentsComponentParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -12544,26 +12654,26 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Layout__ComponentsAssignment_2"
 
 
-    // $ANTLR start "rule__Label__ExpAssignment_2"
-    // InternalUi23.g:4145:1: rule__Label__ExpAssignment_2 : ( ruleExp ) ;
-    public final void rule__Label__ExpAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Label__ExpressionAssignment_2"
+    // InternalUi23.g:4183:1: rule__Label__ExpressionAssignment_2 : ( ruleExp ) ;
+    public final void rule__Label__ExpressionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:4149:1: ( ( ruleExp ) )
-            // InternalUi23.g:4150:2: ( ruleExp )
+            // InternalUi23.g:4187:1: ( ( ruleExp ) )
+            // InternalUi23.g:4188:2: ( ruleExp )
             {
-            // InternalUi23.g:4150:2: ( ruleExp )
-            // InternalUi23.g:4151:3: ruleExp
+            // InternalUi23.g:4188:2: ( ruleExp )
+            // InternalUi23.g:4189:3: ruleExp
             {
-             before(grammarAccess.getLabelAccess().getExpExpParserRuleCall_2_0()); 
+             before(grammarAccess.getLabelAccess().getExpressionExpParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleExp();
 
             state._fsp--;
 
-             after(grammarAccess.getLabelAccess().getExpExpParserRuleCall_2_0()); 
+             after(grammarAccess.getLabelAccess().getExpressionExpParserRuleCall_2_0()); 
 
             }
 
@@ -12582,21 +12692,21 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Label__ExpAssignment_2"
+    // $ANTLR end "rule__Label__ExpressionAssignment_2"
 
 
     // $ANTLR start "rule__InputText__NameAssignment_1"
-    // InternalUi23.g:4160:1: rule__InputText__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalUi23.g:4198:1: rule__InputText__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__InputText__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:4164:1: ( ( RULE_ID ) )
-            // InternalUi23.g:4165:2: ( RULE_ID )
+            // InternalUi23.g:4202:1: ( ( RULE_ID ) )
+            // InternalUi23.g:4203:2: ( RULE_ID )
             {
-            // InternalUi23.g:4165:2: ( RULE_ID )
-            // InternalUi23.g:4166:3: RULE_ID
+            // InternalUi23.g:4203:2: ( RULE_ID )
+            // InternalUi23.g:4204:3: RULE_ID
             {
              before(grammarAccess.getInputTextAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -12622,26 +12732,26 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__InputText__NameAssignment_1"
 
 
-    // $ANTLR start "rule__InputText__ExpAssignment_3"
-    // InternalUi23.g:4175:1: rule__InputText__ExpAssignment_3 : ( ruleExp ) ;
-    public final void rule__InputText__ExpAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__InputText__ExpressionAssignment_3"
+    // InternalUi23.g:4213:1: rule__InputText__ExpressionAssignment_3 : ( ruleExp ) ;
+    public final void rule__InputText__ExpressionAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:4179:1: ( ( ruleExp ) )
-            // InternalUi23.g:4180:2: ( ruleExp )
+            // InternalUi23.g:4217:1: ( ( ruleExp ) )
+            // InternalUi23.g:4218:2: ( ruleExp )
             {
-            // InternalUi23.g:4180:2: ( ruleExp )
-            // InternalUi23.g:4181:3: ruleExp
+            // InternalUi23.g:4218:2: ( ruleExp )
+            // InternalUi23.g:4219:3: ruleExp
             {
-             before(grammarAccess.getInputTextAccess().getExpExpParserRuleCall_3_0()); 
+             before(grammarAccess.getInputTextAccess().getExpressionExpParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleExp();
 
             state._fsp--;
 
-             after(grammarAccess.getInputTextAccess().getExpExpParserRuleCall_3_0()); 
+             after(grammarAccess.getInputTextAccess().getExpressionExpParserRuleCall_3_0()); 
 
             }
 
@@ -12660,21 +12770,21 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__InputText__ExpAssignment_3"
+    // $ANTLR end "rule__InputText__ExpressionAssignment_3"
 
 
     // $ANTLR start "rule__Button__NameAssignment_2"
-    // InternalUi23.g:4190:1: rule__Button__NameAssignment_2 : ( RULE_ID ) ;
+    // InternalUi23.g:4228:1: rule__Button__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Button__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:4194:1: ( ( RULE_ID ) )
-            // InternalUi23.g:4195:2: ( RULE_ID )
+            // InternalUi23.g:4232:1: ( ( RULE_ID ) )
+            // InternalUi23.g:4233:2: ( RULE_ID )
             {
-            // InternalUi23.g:4195:2: ( RULE_ID )
-            // InternalUi23.g:4196:3: RULE_ID
+            // InternalUi23.g:4233:2: ( RULE_ID )
+            // InternalUi23.g:4234:3: RULE_ID
             {
              before(grammarAccess.getButtonAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -12700,26 +12810,26 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Button__NameAssignment_2"
 
 
-    // $ANTLR start "rule__Button__ExpAssignment_4"
-    // InternalUi23.g:4205:1: rule__Button__ExpAssignment_4 : ( ruleExp ) ;
-    public final void rule__Button__ExpAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__Button__ExpressionAssignment_4"
+    // InternalUi23.g:4243:1: rule__Button__ExpressionAssignment_4 : ( ruleExp ) ;
+    public final void rule__Button__ExpressionAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:4209:1: ( ( ruleExp ) )
-            // InternalUi23.g:4210:2: ( ruleExp )
+            // InternalUi23.g:4247:1: ( ( ruleExp ) )
+            // InternalUi23.g:4248:2: ( ruleExp )
             {
-            // InternalUi23.g:4210:2: ( ruleExp )
-            // InternalUi23.g:4211:3: ruleExp
+            // InternalUi23.g:4248:2: ( ruleExp )
+            // InternalUi23.g:4249:3: ruleExp
             {
-             before(grammarAccess.getButtonAccess().getExpExpParserRuleCall_4_0()); 
+             before(grammarAccess.getButtonAccess().getExpressionExpParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
             ruleExp();
 
             state._fsp--;
 
-             after(grammarAccess.getButtonAccess().getExpExpParserRuleCall_4_0()); 
+             after(grammarAccess.getButtonAccess().getExpressionExpParserRuleCall_4_0()); 
 
             }
 
@@ -12738,21 +12848,21 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Button__ExpAssignment_4"
+    // $ANTLR end "rule__Button__ExpressionAssignment_4"
 
 
     // $ANTLR start "rule__FormUse__NameAssignment_0"
-    // InternalUi23.g:4220:1: rule__FormUse__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalUi23.g:4258:1: rule__FormUse__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__FormUse__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:4224:1: ( ( RULE_ID ) )
-            // InternalUi23.g:4225:2: ( RULE_ID )
+            // InternalUi23.g:4262:1: ( ( RULE_ID ) )
+            // InternalUi23.g:4263:2: ( RULE_ID )
             {
-            // InternalUi23.g:4225:2: ( RULE_ID )
-            // InternalUi23.g:4226:3: RULE_ID
+            // InternalUi23.g:4263:2: ( RULE_ID )
+            // InternalUi23.g:4264:3: RULE_ID
             {
              before(grammarAccess.getFormUseAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -12778,26 +12888,26 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__FormUse__NameAssignment_0"
 
 
-    // $ANTLR start "rule__FormUse__ExpAssignment_2_0"
-    // InternalUi23.g:4235:1: rule__FormUse__ExpAssignment_2_0 : ( ruleExp ) ;
-    public final void rule__FormUse__ExpAssignment_2_0() throws RecognitionException {
+    // $ANTLR start "rule__FormUse__ExpressionsAssignment_2_0"
+    // InternalUi23.g:4273:1: rule__FormUse__ExpressionsAssignment_2_0 : ( ruleExp ) ;
+    public final void rule__FormUse__ExpressionsAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:4239:1: ( ( ruleExp ) )
-            // InternalUi23.g:4240:2: ( ruleExp )
+            // InternalUi23.g:4277:1: ( ( ruleExp ) )
+            // InternalUi23.g:4278:2: ( ruleExp )
             {
-            // InternalUi23.g:4240:2: ( ruleExp )
-            // InternalUi23.g:4241:3: ruleExp
+            // InternalUi23.g:4278:2: ( ruleExp )
+            // InternalUi23.g:4279:3: ruleExp
             {
-             before(grammarAccess.getFormUseAccess().getExpExpParserRuleCall_2_0_0()); 
+             before(grammarAccess.getFormUseAccess().getExpressionsExpParserRuleCall_2_0_0()); 
             pushFollow(FOLLOW_2);
             ruleExp();
 
             state._fsp--;
 
-             after(grammarAccess.getFormUseAccess().getExpExpParserRuleCall_2_0_0()); 
+             after(grammarAccess.getFormUseAccess().getExpressionsExpParserRuleCall_2_0_0()); 
 
             }
 
@@ -12816,29 +12926,29 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FormUse__ExpAssignment_2_0"
+    // $ANTLR end "rule__FormUse__ExpressionsAssignment_2_0"
 
 
-    // $ANTLR start "rule__FormUse__ExpAssignment_2_1_1"
-    // InternalUi23.g:4250:1: rule__FormUse__ExpAssignment_2_1_1 : ( ruleExp ) ;
-    public final void rule__FormUse__ExpAssignment_2_1_1() throws RecognitionException {
+    // $ANTLR start "rule__FormUse__ExpressionsAssignment_2_1_1"
+    // InternalUi23.g:4288:1: rule__FormUse__ExpressionsAssignment_2_1_1 : ( ruleExp ) ;
+    public final void rule__FormUse__ExpressionsAssignment_2_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:4254:1: ( ( ruleExp ) )
-            // InternalUi23.g:4255:2: ( ruleExp )
+            // InternalUi23.g:4292:1: ( ( ruleExp ) )
+            // InternalUi23.g:4293:2: ( ruleExp )
             {
-            // InternalUi23.g:4255:2: ( ruleExp )
-            // InternalUi23.g:4256:3: ruleExp
+            // InternalUi23.g:4293:2: ( ruleExp )
+            // InternalUi23.g:4294:3: ruleExp
             {
-             before(grammarAccess.getFormUseAccess().getExpExpParserRuleCall_2_1_1_0()); 
+             before(grammarAccess.getFormUseAccess().getExpressionsExpParserRuleCall_2_1_1_0()); 
             pushFollow(FOLLOW_2);
             ruleExp();
 
             state._fsp--;
 
-             after(grammarAccess.getFormUseAccess().getExpExpParserRuleCall_2_1_1_0()); 
+             after(grammarAccess.getFormUseAccess().getExpressionsExpParserRuleCall_2_1_1_0()); 
 
             }
 
@@ -12857,21 +12967,21 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__FormUse__ExpAssignment_2_1_1"
+    // $ANTLR end "rule__FormUse__ExpressionsAssignment_2_1_1"
 
 
     // $ANTLR start "rule__Parameter__NameAssignment_0"
-    // InternalUi23.g:4265:1: rule__Parameter__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalUi23.g:4303:1: rule__Parameter__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__Parameter__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:4269:1: ( ( RULE_ID ) )
-            // InternalUi23.g:4270:2: ( RULE_ID )
+            // InternalUi23.g:4307:1: ( ( RULE_ID ) )
+            // InternalUi23.g:4308:2: ( RULE_ID )
             {
-            // InternalUi23.g:4270:2: ( RULE_ID )
-            // InternalUi23.g:4271:3: RULE_ID
+            // InternalUi23.g:4308:2: ( RULE_ID )
+            // InternalUi23.g:4309:3: RULE_ID
             {
              before(grammarAccess.getParameterAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -12898,17 +13008,17 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Parameter__TypeAssignment_2"
-    // InternalUi23.g:4280:1: rule__Parameter__TypeAssignment_2 : ( ruleType ) ;
+    // InternalUi23.g:4318:1: rule__Parameter__TypeAssignment_2 : ( ruleType ) ;
     public final void rule__Parameter__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:4284:1: ( ( ruleType ) )
-            // InternalUi23.g:4285:2: ( ruleType )
+            // InternalUi23.g:4322:1: ( ( ruleType ) )
+            // InternalUi23.g:4323:2: ( ruleType )
             {
-            // InternalUi23.g:4285:2: ( ruleType )
-            // InternalUi23.g:4286:3: ruleType
+            // InternalUi23.g:4323:2: ( ruleType )
+            // InternalUi23.g:4324:3: ruleType
             {
              before(grammarAccess.getParameterAccess().getTypeTypeParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -12939,17 +13049,17 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Exp__RightAssignment_1_1"
-    // InternalUi23.g:4295:1: rule__Exp__RightAssignment_1_1 : ( ruleEquality ) ;
+    // InternalUi23.g:4333:1: rule__Exp__RightAssignment_1_1 : ( ruleEquality ) ;
     public final void rule__Exp__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:4299:1: ( ( ruleEquality ) )
-            // InternalUi23.g:4300:2: ( ruleEquality )
+            // InternalUi23.g:4337:1: ( ( ruleEquality ) )
+            // InternalUi23.g:4338:2: ( ruleEquality )
             {
-            // InternalUi23.g:4300:2: ( ruleEquality )
-            // InternalUi23.g:4301:3: ruleEquality
+            // InternalUi23.g:4338:2: ( ruleEquality )
+            // InternalUi23.g:4339:3: ruleEquality
             {
              before(grammarAccess.getExpAccess().getRightEqualityParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -12980,17 +13090,17 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Equality__RightAssignment_1_1"
-    // InternalUi23.g:4310:1: rule__Equality__RightAssignment_1_1 : ( ruleCompare ) ;
+    // InternalUi23.g:4348:1: rule__Equality__RightAssignment_1_1 : ( ruleCompare ) ;
     public final void rule__Equality__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:4314:1: ( ( ruleCompare ) )
-            // InternalUi23.g:4315:2: ( ruleCompare )
+            // InternalUi23.g:4352:1: ( ( ruleCompare ) )
+            // InternalUi23.g:4353:2: ( ruleCompare )
             {
-            // InternalUi23.g:4315:2: ( ruleCompare )
-            // InternalUi23.g:4316:3: ruleCompare
+            // InternalUi23.g:4353:2: ( ruleCompare )
+            // InternalUi23.g:4354:3: ruleCompare
             {
              before(grammarAccess.getEqualityAccess().getRightCompareParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -13021,17 +13131,17 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Compare__RightAssignment_1_1"
-    // InternalUi23.g:4325:1: rule__Compare__RightAssignment_1_1 : ( ruleConcat ) ;
+    // InternalUi23.g:4363:1: rule__Compare__RightAssignment_1_1 : ( ruleConcat ) ;
     public final void rule__Compare__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:4329:1: ( ( ruleConcat ) )
-            // InternalUi23.g:4330:2: ( ruleConcat )
+            // InternalUi23.g:4367:1: ( ( ruleConcat ) )
+            // InternalUi23.g:4368:2: ( ruleConcat )
             {
-            // InternalUi23.g:4330:2: ( ruleConcat )
-            // InternalUi23.g:4331:3: ruleConcat
+            // InternalUi23.g:4368:2: ( ruleConcat )
+            // InternalUi23.g:4369:3: ruleConcat
             {
              before(grammarAccess.getCompareAccess().getRightConcatParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -13062,17 +13172,17 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Concat__RightAssignment_1_1"
-    // InternalUi23.g:4340:1: rule__Concat__RightAssignment_1_1 : ( ruleAddMinus ) ;
+    // InternalUi23.g:4378:1: rule__Concat__RightAssignment_1_1 : ( ruleAddMinus ) ;
     public final void rule__Concat__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:4344:1: ( ( ruleAddMinus ) )
-            // InternalUi23.g:4345:2: ( ruleAddMinus )
+            // InternalUi23.g:4382:1: ( ( ruleAddMinus ) )
+            // InternalUi23.g:4383:2: ( ruleAddMinus )
             {
-            // InternalUi23.g:4345:2: ( ruleAddMinus )
-            // InternalUi23.g:4346:3: ruleAddMinus
+            // InternalUi23.g:4383:2: ( ruleAddMinus )
+            // InternalUi23.g:4384:3: ruleAddMinus
             {
              before(grammarAccess.getConcatAccess().getRightAddMinusParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -13103,17 +13213,17 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AddMinus__RightAssignment_1_1"
-    // InternalUi23.g:4355:1: rule__AddMinus__RightAssignment_1_1 : ( ruleFactor ) ;
+    // InternalUi23.g:4393:1: rule__AddMinus__RightAssignment_1_1 : ( ruleFactor ) ;
     public final void rule__AddMinus__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:4359:1: ( ( ruleFactor ) )
-            // InternalUi23.g:4360:2: ( ruleFactor )
+            // InternalUi23.g:4397:1: ( ( ruleFactor ) )
+            // InternalUi23.g:4398:2: ( ruleFactor )
             {
-            // InternalUi23.g:4360:2: ( ruleFactor )
-            // InternalUi23.g:4361:3: ruleFactor
+            // InternalUi23.g:4398:2: ( ruleFactor )
+            // InternalUi23.g:4399:3: ruleFactor
             {
              before(grammarAccess.getAddMinusAccess().getRightFactorParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -13144,17 +13254,17 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__RightAssignment_1_1"
-    // InternalUi23.g:4370:1: rule__Factor__RightAssignment_1_1 : ( rulePrimary ) ;
+    // InternalUi23.g:4408:1: rule__Factor__RightAssignment_1_1 : ( rulePrimary ) ;
     public final void rule__Factor__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:4374:1: ( ( rulePrimary ) )
-            // InternalUi23.g:4375:2: ( rulePrimary )
+            // InternalUi23.g:4412:1: ( ( rulePrimary ) )
+            // InternalUi23.g:4413:2: ( rulePrimary )
             {
-            // InternalUi23.g:4375:2: ( rulePrimary )
-            // InternalUi23.g:4376:3: rulePrimary
+            // InternalUi23.g:4413:2: ( rulePrimary )
+            // InternalUi23.g:4414:3: rulePrimary
             {
              before(grammarAccess.getFactorAccess().getRightPrimaryParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -13185,17 +13295,17 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__ValueAssignment_0_1"
-    // InternalUi23.g:4385:1: rule__Primary__ValueAssignment_0_1 : ( RULE_INT ) ;
+    // InternalUi23.g:4423:1: rule__Primary__ValueAssignment_0_1 : ( RULE_INT ) ;
     public final void rule__Primary__ValueAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:4389:1: ( ( RULE_INT ) )
-            // InternalUi23.g:4390:2: ( RULE_INT )
+            // InternalUi23.g:4427:1: ( ( RULE_INT ) )
+            // InternalUi23.g:4428:2: ( RULE_INT )
             {
-            // InternalUi23.g:4390:2: ( RULE_INT )
-            // InternalUi23.g:4391:3: RULE_INT
+            // InternalUi23.g:4428:2: ( RULE_INT )
+            // InternalUi23.g:4429:3: RULE_INT
             {
              before(grammarAccess.getPrimaryAccess().getValueINTTerminalRuleCall_0_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -13222,17 +13332,17 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__ValueAssignment_1_1"
-    // InternalUi23.g:4400:1: rule__Primary__ValueAssignment_1_1 : ( RULE_STRING ) ;
+    // InternalUi23.g:4438:1: rule__Primary__ValueAssignment_1_1 : ( RULE_STRING ) ;
     public final void rule__Primary__ValueAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUi23.g:4404:1: ( ( RULE_STRING ) )
-            // InternalUi23.g:4405:2: ( RULE_STRING )
+            // InternalUi23.g:4442:1: ( ( RULE_STRING ) )
+            // InternalUi23.g:4443:2: ( RULE_STRING )
             {
-            // InternalUi23.g:4405:2: ( RULE_STRING )
-            // InternalUi23.g:4406:3: RULE_STRING
+            // InternalUi23.g:4443:2: ( RULE_STRING )
+            // InternalUi23.g:4444:3: RULE_STRING
             {
              before(grammarAccess.getPrimaryAccess().getValueSTRINGTerminalRuleCall_1_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -13265,48 +13375,48 @@ public class InternalUi23Parser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000084000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000080002L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x000000001C010000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x000000001C000000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000108000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000010010L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000001E01810L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000001C01812L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x000000001C008060L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000002000010L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x000000001C018060L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000060000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000060000002L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000180000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000180000002L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000001E00000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000001E00000002L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000002000000002L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x000000C000000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x000000C000000002L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000010002000000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000010002000002L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000021000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001002L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000007004000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000007000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000010002L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000042000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000018000000000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000004010L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000018000780010L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000018000700012L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000007002060L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000800010L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000007006060L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000018000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000018000002L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000060000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000060000002L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000780000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000780000002L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000800000002L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000003000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000003000000002L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000004000800000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000004000800002L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000800000L});
     public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000004000L});
 
 }

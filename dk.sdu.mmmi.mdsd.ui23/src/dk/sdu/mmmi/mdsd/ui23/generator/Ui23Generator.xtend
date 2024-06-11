@@ -12,6 +12,18 @@ import java.util.HashMap
 import dk.sdu.mmmi.mdsd.ui23.ui23.UI
 import dk.sdu.mmmi.mdsd.ui23.ui23.Layout
 import dk.sdu.mmmi.mdsd.ui23.ui23.Component
+import dk.sdu.mmmi.mdsd.ui23.ui23.Label
+import dk.sdu.mmmi.mdsd.ui23.ui23.Element
+import dk.sdu.mmmi.mdsd.ui23.ui23.FormUse
+import dk.sdu.mmmi.mdsd.ui23.ui23.InputText
+import dk.sdu.mmmi.mdsd.ui23.ui23.Button
+import dk.sdu.mmmi.mdsd.ui23.ui23.ValueInt
+import dk.sdu.mmmi.mdsd.ui23.ui23.Expression
+import dk.sdu.mmmi.mdsd.ui23.ui23.ValueString
+import dk.sdu.mmmi.mdsd.ui23.ui23.Plus
+import dk.sdu.mmmi.mdsd.ui23.ui23.Minus
+import dk.sdu.mmmi.mdsd.ui23.ui23.Mult
+import dk.sdu.mmmi.mdsd.ui23.ui23.Div
 
 /**
  * Generates code from your model files on save.
@@ -27,8 +39,8 @@ class Ui23Generator extends AbstractGenerator {
 
 		variables = new HashMap()
 		val ui = resource.allContents.filter(UI).next
-		fsa.generateFile(ui.title + "/UserInterface" + ".java", ui.compileUserInterface)
-		fsa.generateFile(ui.title + "/BasicForm" + ".java", ui.compileBasicForm)
+		fsa.generateFile(ui.title.toString.toLowerCase + "/UserInterface" + ".java", ui.compileUserInterface)
+		fsa.generateFile(ui.title.toString.toLowerCase + "/BasicForm" + ".java", ui.compileBasicForm)
 		fsa.generateFile("common" + "/Form" + ".java", ui.compileCommonForm)
 	}
 	
@@ -45,7 +57,7 @@ class Ui23Generator extends AbstractGenerator {
 	
 	def compileUserInterface(UI ui) {
 	'''
-		package user_interface.basic;
+		package user_interface.«ui.title.toString.toLowerCase»;
 			
 		import javax.swing.*;
 		
@@ -66,7 +78,7 @@ class Ui23Generator extends AbstractGenerator {
 	
 	def compileBasicForm(UI ui) {
 	'''
-		package user_interface.basic;
+		package user_interface.«ui.title.toString.toLowerCase»;
 				
 		import javax.swing.*;
 		import java.awt.event.*;
@@ -99,7 +111,7 @@ class Ui23Generator extends AbstractGenerator {
 	'''	
 	} 	
 	
-		def compileCommonForm(UI ui) {
+	def compileCommonForm(UI ui) {
 	'''
 		package user_interface.common;
 		
@@ -112,21 +124,73 @@ class Ui23Generator extends AbstractGenerator {
 	'''	
 	} 	
 	
-	
 	def generateLayout(Layout layout) {
 		'''
-		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+		«IF layout.name == 'row'»
+			panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+		«ENDIF»
+		«IF layout.name == 'column'»
+			panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+		«ENDIF»
 		«FOR component : layout.components»
-			«component.generateLayout»
+			«component.generateComponent»
 		«ENDFOR»
 		'''
 	}
 	
-	def generateLayout(Component component) {
-		'''
-		panel.add(new JLabel("My first form"));
-		'''
+	
+    dispatch def generateComponent(Layout layout) {
+        generateLayout(layout)
+    }
+
+    dispatch def generateComponent(Element element) {
+    	generateElement(element)
+    }
+
+    dispatch def generateComponent(FormUse formUse) '''
+        panel.add(new JLabel("My first form"));
+    '''
+		
+		
+	dispatch def generateElement(Label label) '''
+        panel.add(new JLabel("«label.expression.computeExpression»"));
+    '''
+		
+	
+	dispatch def generateElement(InputText inputText) '''
+	
+	'''
+	
+	dispatch def generateElement(Button button) '''
+	
+	'''
+	
+	
+	def static dispatch String computeExpression(ValueInt exp) {
+		exp.value.toString
 	}
+		
+	def static dispatch String computeExpression(ValueString exp) {
+		exp.value
+	}
+	
+	def static dispatch String computeExpression(Plus exp) {
+		"(" + exp.left.computeExpression + "+" + exp.right.computeExpression + ")"
+	}
+	
+	def static dispatch String computeExpression(Minus exp) {
+		"(" + exp.left.computeExpression + "-" + exp.right.computeExpression + ")"
+	}
+	
+	def static dispatch String computeExpression(Mult exp) {
+		"(" + exp.left.computeExpression + "*" + exp.right.computeExpression + ")"
+	}
+	
+	def static dispatch String computeExpression(Div exp) {
+		"(" + exp.left.computeExpression + "/" + exp.right.computeExpression + ")"
+	}
+	
+
 	
 	
 }

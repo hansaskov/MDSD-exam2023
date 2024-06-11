@@ -11,7 +11,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
@@ -24,7 +23,6 @@ public class Ui23SyntacticSequencer extends AbstractSyntacticSequencer {
 	protected Ui23GrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Button_AsteriskKeyword_1_q;
 	protected AbstractElementAlias match_Form___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q;
-	protected AbstractElementAlias match_Layout_ColumnKeyword_0_1_or_RowKeyword_0_0;
 	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_2_0_a;
 	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_2_0_p;
 	
@@ -33,7 +31,6 @@ public class Ui23SyntacticSequencer extends AbstractSyntacticSequencer {
 		grammarAccess = (Ui23GrammarAccess) access;
 		match_Button_AsteriskKeyword_1_q = new TokenAlias(false, true, grammarAccess.getButtonAccess().getAsteriskKeyword_1());
 		match_Form___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getFormAccess().getLeftParenthesisKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getFormAccess().getRightParenthesisKeyword_2_2()));
-		match_Layout_ColumnKeyword_0_1_or_RowKeyword_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getLayoutAccess().getColumnKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getLayoutAccess().getRowKeyword_0_0()));
 		match_Primary_LeftParenthesisKeyword_2_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_2_0());
 		match_Primary_LeftParenthesisKeyword_2_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_2_0());
 	}
@@ -54,8 +51,6 @@ public class Ui23SyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Button_AsteriskKeyword_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Form___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q.equals(syntax))
 				emit_Form___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Layout_ColumnKeyword_0_1_or_RowKeyword_0_0.equals(syntax))
-				emit_Layout_ColumnKeyword_0_1_or_RowKeyword_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Primary_LeftParenthesisKeyword_2_0_a.equals(syntax))
 				emit_Primary_LeftParenthesisKeyword_2_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Primary_LeftParenthesisKeyword_2_0_p.equals(syntax))
@@ -89,21 +84,6 @@ public class Ui23SyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_Form___LeftParenthesisKeyword_2_0_RightParenthesisKeyword_2_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     'row' | 'column'
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) '{' '}' (rule start)
-	 *     (rule start) (ambiguity) '{' components+=Component
-	 
-	 * </pre>
-	 */
-	protected void emit_Layout_ColumnKeyword_0_1_or_RowKeyword_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

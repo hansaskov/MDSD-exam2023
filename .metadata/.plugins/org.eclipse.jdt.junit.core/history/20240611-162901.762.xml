@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Ui23ParsingTest" project="dk.sdu.mmmi.mdsd.ui23.tests" tests="1" started="1" failures="1" errors="0" ignored="0">
+  <testsuite name="dk.sdu.mmmi.mdsd.ui23.tests.Ui23ParsingTest" time="0.041" displayname="Ui23ParsingTest" uniqueid="[engine:junit-jupiter]/[class:dk.sdu.mmmi.mdsd.ui23.tests.Ui23ParsingTest]">
+    <testcase name="loadModel" classname="dk.sdu.mmmi.mdsd.ui23.tests.Ui23ParsingTest" time="0.041" displayname="loadModel()" uniqueid="[engine:junit-jupiter]/[class:dk.sdu.mmmi.mdsd.ui23.tests.Ui23ParsingTest]/[method:loadModel()]">
+      <failure>
+        <expected>true</expected>
+        <actual>false</actual>
+        org.opentest4j.AssertionFailedError: Unexpected errors: XtextSyntaxDiagnostic: null:1 missing 'title' at 'Hello', XtextSyntaxDiagnostic: null:1 missing EOF at 'Xtext' ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:214)
+	at dk.sdu.mmmi.mdsd.ui23.tests.Ui23ParsingTest.loadModel(Ui23ParsingTest.java:41)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+
+      </failure>
+    </testcase>
+  </testsuite>
+</testrun>

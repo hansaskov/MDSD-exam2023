@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Ui23GenerationTest" project="dk.sdu.mmmi.mdsd.ui23.tests" tests="2" started="2" failures="0" errors="2" ignored="0">
+  <testsuite name="dk.sdu.mmmi.mdsd.ui23.tests.Ui23GenerationTest" time="0.066" displayname="Ui23GenerationTest" uniqueid="[engine:junit-jupiter]/[class:dk.sdu.mmmi.mdsd.ui23.tests.Ui23GenerationTest]">
+    <testcase name="testBasic" classname="dk.sdu.mmmi.mdsd.ui23.tests.Ui23GenerationTest" time="0.061" displayname="testBasic()" uniqueid="[engine:junit-jupiter]/[class:dk.sdu.mmmi.mdsd.ui23.tests.Ui23GenerationTest]/[method:testBasic()]">
+      <error>java.lang.Error: Unresolved compilation problems:
+The method or field exp is undefined for the type Label
+computeExpression cannot be resolved
+	at dk.sdu.mmmi.mdsd.ui23.generator.Ui23Generator._generateElement(Ui23Generator.java:258)
+	at dk.sdu.mmmi.mdsd.ui23.generator.Ui23Generator.generateElement(Ui23Generator.java:300)
+	at dk.sdu.mmmi.mdsd.ui23.generator.Ui23Generator._generateComponent(Ui23Generator.java:247)
+	at dk.sdu.mmmi.mdsd.ui23.generator.Ui23Generator.generateComponent(Ui23Generator.java:283)
+	at dk.sdu.mmmi.mdsd.ui23.generator.Ui23Generator.generateLayout(Ui23Generator.java:234)
+	at dk.sdu.mmmi.mdsd.ui23.generator.Ui23Generator.compileBasicForm(Ui23Generator.java:166)
+	at dk.sdu.mmmi.mdsd.ui23.generator.Ui23Generator.doGenerate(Ui23Generator.java:49)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:44)
+	at org.eclipse.xtext.generator.GeneratorDelegate.generate(GeneratorDelegate.java:35)
+	at org.eclipse.xtext.xbase.testing.CompilationTestHelper$Result.doGenerate(CompilationTestHelper.java:561)
+	at org.eclipse.xtext.xbase.testing.CompilationTestHelper.compile(CompilationTestHelper.java:247)
+	at org.eclipse.xtext.xbase.testing.CompilationTestHelper.compile(CompilationTestHelper.java:197)
+	at org.eclipse.xtext.xbase.testing.CompilationTestHelper.assertCompilesTo(CompilationTestHelper.java:176)
+	at dk.sdu.mmmi.mdsd.ui23.tests.Ui23GenerationTest.testBasic(Ui23GenerationTest.java:184)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+</error>
+    </testcase>
+    <testcase name="testLayout" classname="dk.sdu.mmmi.mdsd.ui23.tests.Ui23GenerationTest" time="0.003" displayname="testLayout()" uniqueid="[engine:junit-jupiter]/[class:dk.sdu.mmmi.mdsd.ui23.tests.Ui23GenerationTest]/[method:testLayout()]">
+      <error>java.lang.Error: Unresolved compilation problems:
+The method or field exp is undefined for the type Label
+computeExpression cannot be resolved
+	at dk.sdu.mmmi.mdsd.ui23.generator.Ui23Generator._generateElement(Ui23Generator.java:258)
+	at dk.sdu.mmmi.mdsd.ui23.generator.Ui23Generator.generateElement(Ui23Generator.java:300)
+	at dk.sdu.mmmi.mdsd.ui23.generator.Ui23Generator._generateComponent(Ui23Generator.java:247)
+	at dk.sdu.mmmi.mdsd.ui23.generator.Ui23Generator.generateComponent(Ui23Generator.java:283)
+	at dk.sdu.mmmi.mdsd.ui23.generator.Ui23Generator.generateLayout(Ui23Generator.java:234)
+	at dk.sdu.mmmi.mdsd.ui23.generator.Ui23Generator.compileBasicForm(Ui23Generator.java:166)
+	at dk.sdu.mmmi.mdsd.ui23.generator.Ui23Generator.doGenerate(Ui23Generator.java:49)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:44)
+	at org.eclipse.xtext.generator.GeneratorDelegate.generate(GeneratorDelegate.java:35)
+	at org.eclipse.xtext.xbase.testing.CompilationTestHelper$Result.doGenerate(CompilationTestHelper.java:561)
+	at org.eclipse.xtext.xbase.testing.CompilationTestHelper.compile(CompilationTestHelper.java:247)
+	at org.eclipse.xtext.xbase.testing.CompilationTestHelper.compile(CompilationTestHelper.java:197)
+	at org.eclipse.xtext.xbase.testing.CompilationTestHelper.assertCompilesTo(CompilationTestHelper.java:176)
+	at dk.sdu.mmmi.mdsd.ui23.tests.Ui23GenerationTest.testLayout(Ui23GenerationTest.java:355)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

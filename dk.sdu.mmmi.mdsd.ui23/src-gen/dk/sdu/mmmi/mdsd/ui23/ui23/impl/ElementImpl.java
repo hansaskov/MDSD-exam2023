@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.ui23.ui23.impl.ElementImpl#getExp <em>Exp</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.ui23.ui23.impl.ElementImpl#getExpression <em>Expression</em>}</li>
  * </ul>
  *
  * @generated
@@ -31,14 +31,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ElementImpl extends ComponentImpl implements Element
 {
   /**
-   * The cached value of the '{@link #getExp() <em>Exp</em>}' containment reference.
+   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExp()
+   * @see #getExpression()
    * @generated
    * @ordered
    */
-  protected Expression exp;
+  protected Expression expression;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +67,9 @@ public class ElementImpl extends ComponentImpl implements Element
    * @generated
    */
   @Override
-  public Expression getExp()
+  public Expression getExpression()
   {
-    return exp;
+    return expression;
   }
 
   /**
@@ -77,13 +77,13 @@ public class ElementImpl extends ComponentImpl implements Element
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExp(Expression newExp, NotificationChain msgs)
+  public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs)
   {
-    Expression oldExp = exp;
-    exp = newExp;
+    Expression oldExpression = expression;
+    expression = newExpression;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Ui23Package.ELEMENT__EXP, oldExp, newExp);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Ui23Package.ELEMENT__EXPRESSION, oldExpression, newExpression);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -95,20 +95,20 @@ public class ElementImpl extends ComponentImpl implements Element
    * @generated
    */
   @Override
-  public void setExp(Expression newExp)
+  public void setExpression(Expression newExpression)
   {
-    if (newExp != exp)
+    if (newExpression != expression)
     {
       NotificationChain msgs = null;
-      if (exp != null)
-        msgs = ((InternalEObject)exp).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Ui23Package.ELEMENT__EXP, null, msgs);
-      if (newExp != null)
-        msgs = ((InternalEObject)newExp).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Ui23Package.ELEMENT__EXP, null, msgs);
-      msgs = basicSetExp(newExp, msgs);
+      if (expression != null)
+        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - Ui23Package.ELEMENT__EXPRESSION, null, msgs);
+      if (newExpression != null)
+        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - Ui23Package.ELEMENT__EXPRESSION, null, msgs);
+      msgs = basicSetExpression(newExpression, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, Ui23Package.ELEMENT__EXP, newExp, newExp));
+      eNotify(new ENotificationImpl(this, Notification.SET, Ui23Package.ELEMENT__EXPRESSION, newExpression, newExpression));
   }
 
   /**
@@ -121,8 +121,8 @@ public class ElementImpl extends ComponentImpl implements Element
   {
     switch (featureID)
     {
-      case Ui23Package.ELEMENT__EXP:
-        return basicSetExp(null, msgs);
+      case Ui23Package.ELEMENT__EXPRESSION:
+        return basicSetExpression(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -137,8 +137,8 @@ public class ElementImpl extends ComponentImpl implements Element
   {
     switch (featureID)
     {
-      case Ui23Package.ELEMENT__EXP:
-        return getExp();
+      case Ui23Package.ELEMENT__EXPRESSION:
+        return getExpression();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -153,8 +153,8 @@ public class ElementImpl extends ComponentImpl implements Element
   {
     switch (featureID)
     {
-      case Ui23Package.ELEMENT__EXP:
-        setExp((Expression)newValue);
+      case Ui23Package.ELEMENT__EXPRESSION:
+        setExpression((Expression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -170,8 +170,8 @@ public class ElementImpl extends ComponentImpl implements Element
   {
     switch (featureID)
     {
-      case Ui23Package.ELEMENT__EXP:
-        setExp((Expression)null);
+      case Ui23Package.ELEMENT__EXPRESSION:
+        setExpression((Expression)null);
         return;
     }
     super.eUnset(featureID);
@@ -187,8 +187,8 @@ public class ElementImpl extends ComponentImpl implements Element
   {
     switch (featureID)
     {
-      case Ui23Package.ELEMENT__EXP:
-        return exp != null;
+      case Ui23Package.ELEMENT__EXPRESSION:
+        return expression != null;
     }
     return super.eIsSet(featureID);
   }

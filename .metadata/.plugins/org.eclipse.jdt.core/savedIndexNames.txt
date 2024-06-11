@@ -20,13 +20,11 @@ INDEX VERSION 1.134+/home/hans/Code/mdsd/exam2023/.metadata/.plugins/org.eclipse
 644408005.index
 2276173753.index
 2480439331.index
-2602908863.index
 41148356.index
 3537211029.index
 1600875383.index
 3247718486.index
 2050596960.index
-3084071114.index
 3273647720.index
 1175656913.index
 782240475.index
@@ -44,10 +42,7 @@ INDEX VERSION 1.134+/home/hans/Code/mdsd/exam2023/.metadata/.plugins/org.eclipse
 3062310977.index
 1508987547.index
 3507923837.index
-3595722339.index
 2275012857.index
-4281324856.index
-3110423635.index
 310671383.index
 742336869.index
 3707437195.index

@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dk.sdu.mmmi.mdsd.ui23.ui23.Layout#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.ui23.ui23.Layout#getComponents <em>Components</em>}</li>
  * </ul>
  *
@@ -23,6 +24,28 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Layout extends Component
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see dk.sdu.mmmi.mdsd.ui23.ui23.Ui23Package#getLayout_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.ui23.ui23.Layout#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
   /**
    * Returns the value of the '<em><b>Components</b></em>' containment reference list.
    * The list contents are of type {@link dk.sdu.mmmi.mdsd.ui23.ui23.Component}.

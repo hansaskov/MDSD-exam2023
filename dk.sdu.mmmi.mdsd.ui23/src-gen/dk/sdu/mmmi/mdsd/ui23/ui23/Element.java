@@ -13,7 +13,7 @@ package dk.sdu.mmmi.mdsd.ui23.ui23;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.ui23.ui23.Element#getExp <em>Exp</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.ui23.ui23.Element#getExpression <em>Expression</em>}</li>
  * </ul>
  *
  * @see dk.sdu.mmmi.mdsd.ui23.ui23.Ui23Package#getElement()
@@ -23,25 +23,25 @@ package dk.sdu.mmmi.mdsd.ui23.ui23;
 public interface Element extends Component
 {
   /**
-   * Returns the value of the '<em><b>Exp</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Exp</em>' containment reference.
-   * @see #setExp(Expression)
-   * @see dk.sdu.mmmi.mdsd.ui23.ui23.Ui23Package#getElement_Exp()
+   * @return the value of the '<em>Expression</em>' containment reference.
+   * @see #setExpression(Expression)
+   * @see dk.sdu.mmmi.mdsd.ui23.ui23.Ui23Package#getElement_Expression()
    * @model containment="true"
    * @generated
    */
-  Expression getExp();
+  Expression getExpression();
 
   /**
-   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.ui23.ui23.Element#getExp <em>Exp</em>}' containment reference.
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.ui23.ui23.Element#getExpression <em>Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Exp</em>' containment reference.
-   * @see #getExp()
+   * @param value the new value of the '<em>Expression</em>' containment reference.
+   * @see #getExpression()
    * @generated
    */
-  void setExp(Expression value);
+  void setExpression(Expression value);
 
 } // Element

@@ -21,11 +21,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ui23.ecore#//Form/layout"/>
     </genClasses>
     <genClasses ecoreClass="Ui23.ecore#//Layout">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ui23.ecore#//Layout/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ui23.ecore#//Layout/components"/>
     </genClasses>
     <genClasses ecoreClass="Ui23.ecore#//Component"/>
     <genClasses ecoreClass="Ui23.ecore#//Element">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ui23.ecore#//Element/exp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ui23.ecore#//Element/expression"/>
     </genClasses>
     <genClasses ecoreClass="Ui23.ecore#//Label"/>
     <genClasses ecoreClass="Ui23.ecore#//InputText">
@@ -36,7 +37,7 @@
     </genClasses>
     <genClasses ecoreClass="Ui23.ecore#//FormUse">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ui23.ecore#//FormUse/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ui23.ecore#//FormUse/exp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ui23.ecore#//FormUse/expressions"/>
     </genClasses>
     <genClasses ecoreClass="Ui23.ecore#//Parameter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ui23.ecore#//Parameter/name"/>

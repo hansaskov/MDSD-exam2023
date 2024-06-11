@@ -235,19 +235,19 @@ public class Ui23SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Button returns Button
 	 *
 	 * Constraint:
-	 *     (name=ID exp=Exp)
+	 *     (name=ID expression=Exp)
 	 * </pre>
 	 */
 	protected void sequence_Button(ISerializationContext context, Button semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, Ui23Package.Literals.BUTTON__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ui23Package.Literals.BUTTON__NAME));
-			if (transientValues.isValueTransient(semanticObject, Ui23Package.Literals.ELEMENT__EXP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ui23Package.Literals.ELEMENT__EXP));
+			if (transientValues.isValueTransient(semanticObject, Ui23Package.Literals.ELEMENT__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ui23Package.Literals.ELEMENT__EXPRESSION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getButtonAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getButtonAccess().getExpExpParserRuleCall_4_0(), semanticObject.getExp());
+		feeder.accept(grammarAccess.getButtonAccess().getExpressionExpParserRuleCall_4_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	
@@ -721,7 +721,7 @@ public class Ui23SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     FormUse returns FormUse
 	 *
 	 * Constraint:
-	 *     (name=ID (exp=Exp exp=Exp*)?)
+	 *     (name=ID (expressions+=Exp expressions+=Exp*)?)
 	 * </pre>
 	 */
 	protected void sequence_FormUse(ISerializationContext context, FormUse semanticObject) {
@@ -765,19 +765,19 @@ public class Ui23SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     InputText returns InputText
 	 *
 	 * Constraint:
-	 *     (name=ID exp=Exp)
+	 *     (name=ID expression=Exp)
 	 * </pre>
 	 */
 	protected void sequence_InputText(ISerializationContext context, InputText semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, Ui23Package.Literals.INPUT_TEXT__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ui23Package.Literals.INPUT_TEXT__NAME));
-			if (transientValues.isValueTransient(semanticObject, Ui23Package.Literals.ELEMENT__EXP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ui23Package.Literals.ELEMENT__EXP));
+			if (transientValues.isValueTransient(semanticObject, Ui23Package.Literals.ELEMENT__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ui23Package.Literals.ELEMENT__EXPRESSION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getInputTextAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getInputTextAccess().getExpExpParserRuleCall_3_0(), semanticObject.getExp());
+		feeder.accept(grammarAccess.getInputTextAccess().getExpressionExpParserRuleCall_3_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	
@@ -790,16 +790,16 @@ public class Ui23SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Label returns Label
 	 *
 	 * Constraint:
-	 *     exp=Exp
+	 *     expression=Exp
 	 * </pre>
 	 */
 	protected void sequence_Label(ISerializationContext context, Label semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Ui23Package.Literals.ELEMENT__EXP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ui23Package.Literals.ELEMENT__EXP));
+			if (transientValues.isValueTransient(semanticObject, Ui23Package.Literals.ELEMENT__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Ui23Package.Literals.ELEMENT__EXPRESSION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLabelAccess().getExpExpParserRuleCall_2_0(), semanticObject.getExp());
+		feeder.accept(grammarAccess.getLabelAccess().getExpressionExpParserRuleCall_2_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	
@@ -811,7 +811,7 @@ public class Ui23SemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Component returns Layout
 	 *
 	 * Constraint:
-	 *     components+=Component+
+	 *     ((name='row' | name='column') components+=Component*)
 	 * </pre>
 	 */
 	protected void sequence_Layout(ISerializationContext context, Layout semanticObject) {

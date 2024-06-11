@@ -223,29 +223,37 @@ public class Ui23GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.ui23.Ui23.Layout");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final Keyword cRowKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
-		private final Keyword cColumnKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final Assignment cNameAssignment_0_0 = (Assignment)cAlternatives_0.eContents().get(0);
+		private final Keyword cNameRowKeyword_0_0_0 = (Keyword)cNameAssignment_0_0.eContents().get(0);
+		private final Assignment cNameAssignment_0_1 = (Assignment)cAlternatives_0.eContents().get(1);
+		private final Keyword cNameColumnKeyword_0_1_0 = (Keyword)cNameAssignment_0_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cComponentsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cComponentsComponentParserRuleCall_2_0 = (RuleCall)cComponentsAssignment_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Layout:
-		//    ('row' | 'column') '{' components+=Component* '}'
+		//    (name='row' | name='column') '{' components+=Component* '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('row' | 'column') '{' components+=Component* '}'
+		//(name='row' | name='column') '{' components+=Component* '}'
 		public Group getGroup() { return cGroup; }
 		
-		//('row' | 'column')
+		//(name='row' | name='column')
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 		
+		//name='row'
+		public Assignment getNameAssignment_0_0() { return cNameAssignment_0_0; }
+		
 		//'row'
-		public Keyword getRowKeyword_0_0() { return cRowKeyword_0_0; }
+		public Keyword getNameRowKeyword_0_0_0() { return cNameRowKeyword_0_0_0; }
+		
+		//name='column'
+		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
 		
 		//'column'
-		public Keyword getColumnKeyword_0_1() { return cColumnKeyword_0_1; }
+		public Keyword getNameColumnKeyword_0_1_0() { return cNameColumnKeyword_0_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
@@ -312,15 +320,15 @@ public class Ui23GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLabelKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cExpAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cExpExpParserRuleCall_2_0 = (RuleCall)cExpAssignment_2.eContents().get(0);
+		private final Assignment cExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExpressionExpParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
 		
 		//Label:
-		//    'label' ':' exp=Exp
+		//    'label' ':' expression=Exp
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'label' ':' exp=Exp
+		//'label' ':' expression=Exp
 		public Group getGroup() { return cGroup; }
 		
 		//'label'
@@ -329,11 +337,11 @@ public class Ui23GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//exp=Exp
-		public Assignment getExpAssignment_2() { return cExpAssignment_2; }
+		//expression=Exp
+		public Assignment getExpressionAssignment_2() { return cExpressionAssignment_2; }
 		
 		//Exp
-		public RuleCall getExpExpParserRuleCall_2_0() { return cExpExpParserRuleCall_2_0; }
+		public RuleCall getExpressionExpParserRuleCall_2_0() { return cExpressionExpParserRuleCall_2_0; }
 	}
 	public class InputTextElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.ui23.Ui23.InputText");
@@ -342,15 +350,15 @@ public class Ui23GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cExpAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cExpExpParserRuleCall_3_0 = (RuleCall)cExpAssignment_3.eContents().get(0);
+		private final Assignment cExpressionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cExpressionExpParserRuleCall_3_0 = (RuleCall)cExpressionAssignment_3.eContents().get(0);
 		
 		//InputText:
-		//    'input' name=ID ':' exp=Exp
+		//    'input' name=ID ':' expression=Exp
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'input' name=ID ':' exp=Exp
+		//'input' name=ID ':' expression=Exp
 		public Group getGroup() { return cGroup; }
 		
 		//'input'
@@ -365,11 +373,11 @@ public class Ui23GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
-		//exp=Exp
-		public Assignment getExpAssignment_3() { return cExpAssignment_3; }
+		//expression=Exp
+		public Assignment getExpressionAssignment_3() { return cExpressionAssignment_3; }
 		
 		//Exp
-		public RuleCall getExpExpParserRuleCall_3_0() { return cExpExpParserRuleCall_3_0; }
+		public RuleCall getExpressionExpParserRuleCall_3_0() { return cExpressionExpParserRuleCall_3_0; }
 	}
 	public class ButtonElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.ui23.Ui23.Button");
@@ -379,15 +387,15 @@ public class Ui23GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cExpAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cExpExpParserRuleCall_4_0 = (RuleCall)cExpAssignment_4.eContents().get(0);
+		private final Assignment cExpressionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cExpressionExpParserRuleCall_4_0 = (RuleCall)cExpressionAssignment_4.eContents().get(0);
 		
 		//Button:
-		//    'button' '*'? name=ID ':' exp=Exp
+		//    'button' '*'? name=ID ':' expression=Exp
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'button' '*'? name=ID ':' exp=Exp
+		//'button' '*'? name=ID ':' expression=Exp
 		public Group getGroup() { return cGroup; }
 		
 		//'button'
@@ -405,11 +413,11 @@ public class Ui23GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//':'
 		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
 		
-		//exp=Exp
-		public Assignment getExpAssignment_4() { return cExpAssignment_4; }
+		//expression=Exp
+		public Assignment getExpressionAssignment_4() { return cExpressionAssignment_4; }
 		
 		//Exp
-		public RuleCall getExpExpParserRuleCall_4_0() { return cExpExpParserRuleCall_4_0; }
+		public RuleCall getExpressionExpParserRuleCall_4_0() { return cExpressionExpParserRuleCall_4_0; }
 	}
 	public class FormUseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.ui23.Ui23.FormUse");
@@ -418,20 +426,20 @@ public class Ui23GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Assignment cExpAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cExpExpParserRuleCall_2_0_0 = (RuleCall)cExpAssignment_2_0.eContents().get(0);
+		private final Assignment cExpressionsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cExpressionsExpParserRuleCall_2_0_0 = (RuleCall)cExpressionsAssignment_2_0.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCommaKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
-		private final Assignment cExpAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
-		private final RuleCall cExpExpParserRuleCall_2_1_1_0 = (RuleCall)cExpAssignment_2_1_1.eContents().get(0);
+		private final Assignment cExpressionsAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final RuleCall cExpressionsExpParserRuleCall_2_1_1_0 = (RuleCall)cExpressionsAssignment_2_1_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//FormUse:
-		//    name=ID '(' (exp=Exp (',' exp=Exp)*)? ')'
+		//    name=ID '(' (expressions+=Exp (',' expressions+=Exp)*)? ')'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID '(' (exp=Exp (',' exp=Exp)*)? ')'
+		//name=ID '(' (expressions+=Exp (',' expressions+=Exp)*)? ')'
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -443,26 +451,26 @@ public class Ui23GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 		
-		//(exp=Exp (',' exp=Exp)*)?
+		//(expressions+=Exp (',' expressions+=Exp)*)?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//exp=Exp
-		public Assignment getExpAssignment_2_0() { return cExpAssignment_2_0; }
+		//expressions+=Exp
+		public Assignment getExpressionsAssignment_2_0() { return cExpressionsAssignment_2_0; }
 		
 		//Exp
-		public RuleCall getExpExpParserRuleCall_2_0_0() { return cExpExpParserRuleCall_2_0_0; }
+		public RuleCall getExpressionsExpParserRuleCall_2_0_0() { return cExpressionsExpParserRuleCall_2_0_0; }
 		
-		//(',' exp=Exp)*
+		//(',' expressions+=Exp)*
 		public Group getGroup_2_1() { return cGroup_2_1; }
 		
 		//','
 		public Keyword getCommaKeyword_2_1_0() { return cCommaKeyword_2_1_0; }
 		
-		//exp=Exp
-		public Assignment getExpAssignment_2_1_1() { return cExpAssignment_2_1_1; }
+		//expressions+=Exp
+		public Assignment getExpressionsAssignment_2_1_1() { return cExpressionsAssignment_2_1_1; }
 		
 		//Exp
-		public RuleCall getExpExpParserRuleCall_2_1_1_0() { return cExpExpParserRuleCall_2_1_1_0; }
+		public RuleCall getExpressionsExpParserRuleCall_2_1_1_0() { return cExpressionsExpParserRuleCall_2_1_1_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
@@ -1090,7 +1098,7 @@ public class Ui23GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Layout:
-	//    ('row' | 'column') '{' components+=Component* '}'
+	//    (name='row' | name='column') '{' components+=Component* '}'
 	//;
 	public LayoutElements getLayoutAccess() {
 		return pLayout;
@@ -1123,7 +1131,7 @@ public class Ui23GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Label:
-	//    'label' ':' exp=Exp
+	//    'label' ':' expression=Exp
 	//;
 	public LabelElements getLabelAccess() {
 		return pLabel;
@@ -1134,7 +1142,7 @@ public class Ui23GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//InputText:
-	//    'input' name=ID ':' exp=Exp
+	//    'input' name=ID ':' expression=Exp
 	//;
 	public InputTextElements getInputTextAccess() {
 		return pInputText;
@@ -1145,7 +1153,7 @@ public class Ui23GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Button:
-	//    'button' '*'? name=ID ':' exp=Exp
+	//    'button' '*'? name=ID ':' expression=Exp
 	//;
 	public ButtonElements getButtonAccess() {
 		return pButton;
@@ -1156,7 +1164,7 @@ public class Ui23GrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//FormUse:
-	//    name=ID '(' (exp=Exp (',' exp=Exp)*)? ')'
+	//    name=ID '(' (expressions+=Exp (',' expressions+=Exp)*)? ')'
 	//;
 	public FormUseElements getFormUseAccess() {
 		return pFormUse;

@@ -30,19 +30,19 @@ Element:
 ;
 
 Label:
-	'label' ':' exp=Exp
+	'label' ':' expression=Exp
 ;
 
 InputText: 
-	'input' name=ID ':' exp=Exp
+	'input' name=ID ':' expression=Exp
 ;
 
 Button: 
-	'button' '*'? name=ID ':' exp=Exp
+	'button' '*'? name=ID ':' expression=Exp
 ;
 
 FormUse: 
-	name=ID '(' (exp=Exp (',' exp=Exp)*)? ')'
+	name=ID '(' (expressions+=Exp (',' expressions+=Exp)*)? ')'
 ;
 
 Parameter:

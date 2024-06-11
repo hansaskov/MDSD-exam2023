@@ -3,11 +3,25 @@
  */
 package dk.sdu.mmmi.mdsd.ui23.generator;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.Iterators;
+import dk.sdu.mmmi.mdsd.ui23.ui23.Button;
 import dk.sdu.mmmi.mdsd.ui23.ui23.Component;
+import dk.sdu.mmmi.mdsd.ui23.ui23.Div;
+import dk.sdu.mmmi.mdsd.ui23.ui23.Element;
+import dk.sdu.mmmi.mdsd.ui23.ui23.Expression;
 import dk.sdu.mmmi.mdsd.ui23.ui23.Form;
+import dk.sdu.mmmi.mdsd.ui23.ui23.FormUse;
+import dk.sdu.mmmi.mdsd.ui23.ui23.InputText;
+import dk.sdu.mmmi.mdsd.ui23.ui23.Label;
 import dk.sdu.mmmi.mdsd.ui23.ui23.Layout;
+import dk.sdu.mmmi.mdsd.ui23.ui23.Minus;
+import dk.sdu.mmmi.mdsd.ui23.ui23.Mult;
+import dk.sdu.mmmi.mdsd.ui23.ui23.Plus;
 import dk.sdu.mmmi.mdsd.ui23.ui23.UI;
+import dk.sdu.mmmi.mdsd.ui23.ui23.ValueInt;
+import dk.sdu.mmmi.mdsd.ui23.ui23.ValueString;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import org.eclipse.emf.common.util.EList;
@@ -31,12 +45,12 @@ public class Ui23Generator extends AbstractGenerator {
     HashMap<String, String> _hashMap = new HashMap<String, String>();
     Ui23Generator.variables = _hashMap;
     final UI ui = Iterators.<UI>filter(resource.getAllContents(), UI.class).next();
-    String _title = ui.getTitle();
-    String _plus = (_title + "/UserInterface");
+    String _lowerCase = ui.getTitle().toString().toLowerCase();
+    String _plus = (_lowerCase + "/UserInterface");
     String _plus_1 = (_plus + ".java");
     fsa.generateFile(_plus_1, this.compileUserInterface(ui));
-    String _title_1 = ui.getTitle();
-    String _plus_2 = (_title_1 + "/BasicForm");
+    String _lowerCase_1 = ui.getTitle().toString().toLowerCase();
+    String _plus_2 = (_lowerCase_1 + "/BasicForm");
     String _plus_3 = (_plus_2 + ".java");
     fsa.generateFile(_plus_3, this.compileBasicForm(ui));
     fsa.generateFile((("common" + "/Form") + ".java"), this.compileCommonForm(ui));
@@ -53,8 +67,11 @@ public class Ui23Generator extends AbstractGenerator {
    */
   public CharSequence compileUserInterface(final UI ui) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("package user_interface.basic;");
-    _builder.newLine();
+    _builder.append("package user_interface.");
+    String _lowerCase = ui.getTitle().toString().toLowerCase();
+    _builder.append(_lowerCase);
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.newLine();
     _builder.append("import javax.swing.*;");
@@ -100,8 +117,11 @@ public class Ui23Generator extends AbstractGenerator {
 
   public CharSequence compileBasicForm(final UI ui) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("package user_interface.basic;");
-    _builder.newLine();
+    _builder.append("package user_interface.");
+    String _lowerCase = ui.getTitle().toString().toLowerCase();
+    _builder.append(_lowerCase);
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.newLine();
     _builder.append("import javax.swing.*;");
@@ -198,23 +218,158 @@ public class Ui23Generator extends AbstractGenerator {
 
   public CharSequence generateLayout(final Layout layout) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));");
-    _builder.newLine();
+    {
+      String _name = layout.getName();
+      boolean _equals = Objects.equal(_name, "row");
+      if (_equals) {
+        _builder.append("panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));");
+        _builder.newLine();
+      }
+    }
+    {
+      String _name_1 = layout.getName();
+      boolean _equals_1 = Objects.equal(_name_1, "column");
+      if (_equals_1) {
+        _builder.append("panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));");
+        _builder.newLine();
+      }
+    }
     {
       EList<Component> _components = layout.getComponents();
       for(final Component component : _components) {
-        CharSequence _generateLayout = this.generateLayout(component);
-        _builder.append(_generateLayout);
+        Object _generateComponent = this.generateComponent(component);
+        _builder.append(_generateComponent);
         _builder.newLineIfNotEmpty();
       }
     }
     return _builder;
   }
 
-  public CharSequence generateLayout(final Component component) {
+  protected Object _generateComponent(final Layout layout) {
+    return this.generateLayout(layout);
+  }
+
+  protected Object _generateComponent(final Element element) {
+    return this.generateElement(element);
+  }
+
+  protected Object _generateComponent(final FormUse formUse) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("panel.add(new JLabel(\"My first form\"));");
     _builder.newLine();
     return _builder;
+  }
+
+  protected CharSequence _generateElement(final Label label) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("panel.add(new JLabel(\"");
+    String _computeExpression = Ui23Generator.computeExpression(label.getExpression());
+    _builder.append(_computeExpression);
+    _builder.append("\"));");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+
+  protected CharSequence _generateElement(final InputText inputText) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\t");
+    _builder.newLine();
+    return _builder;
+  }
+
+  protected CharSequence _generateElement(final Button button) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\t");
+    _builder.newLine();
+    return _builder;
+  }
+
+  protected static String _computeExpression(final ValueInt exp) {
+    return Integer.valueOf(exp.getValue()).toString();
+  }
+
+  protected static String _computeExpression(final ValueString exp) {
+    return exp.getValue();
+  }
+
+  protected static String _computeExpression(final Plus exp) {
+    String _computeExpression = Ui23Generator.computeExpression(exp.getLeft());
+    String _plus = ("(" + _computeExpression);
+    String _plus_1 = (_plus + "+");
+    String _computeExpression_1 = Ui23Generator.computeExpression(exp.getRight());
+    String _plus_2 = (_plus_1 + _computeExpression_1);
+    return (_plus_2 + ")");
+  }
+
+  protected static String _computeExpression(final Minus exp) {
+    String _computeExpression = Ui23Generator.computeExpression(exp.getLeft());
+    String _plus = ("(" + _computeExpression);
+    String _plus_1 = (_plus + "-");
+    String _computeExpression_1 = Ui23Generator.computeExpression(exp.getRight());
+    String _plus_2 = (_plus_1 + _computeExpression_1);
+    return (_plus_2 + ")");
+  }
+
+  protected static String _computeExpression(final Mult exp) {
+    String _computeExpression = Ui23Generator.computeExpression(exp.getLeft());
+    String _plus = ("(" + _computeExpression);
+    String _plus_1 = (_plus + "*");
+    String _computeExpression_1 = Ui23Generator.computeExpression(exp.getRight());
+    String _plus_2 = (_plus_1 + _computeExpression_1);
+    return (_plus_2 + ")");
+  }
+
+  protected static String _computeExpression(final Div exp) {
+    String _computeExpression = Ui23Generator.computeExpression(exp.getLeft());
+    String _plus = ("(" + _computeExpression);
+    String _plus_1 = (_plus + "/");
+    String _computeExpression_1 = Ui23Generator.computeExpression(exp.getRight());
+    String _plus_2 = (_plus_1 + _computeExpression_1);
+    return (_plus_2 + ")");
+  }
+
+  public Object generateComponent(final Component element) {
+    if (element instanceof Element) {
+      return _generateComponent((Element)element);
+    } else if (element instanceof FormUse) {
+      return _generateComponent((FormUse)element);
+    } else if (element instanceof Layout) {
+      return _generateComponent((Layout)element);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(element).toString());
+    }
+  }
+
+  public CharSequence generateElement(final Element button) {
+    if (button instanceof Button) {
+      return _generateElement((Button)button);
+    } else if (button instanceof InputText) {
+      return _generateElement((InputText)button);
+    } else if (button instanceof Label) {
+      return _generateElement((Label)button);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(button).toString());
+    }
+  }
+
+  public static String computeExpression(final Expression exp) {
+    if (exp instanceof Div) {
+      return _computeExpression((Div)exp);
+    } else if (exp instanceof Minus) {
+      return _computeExpression((Minus)exp);
+    } else if (exp instanceof Mult) {
+      return _computeExpression((Mult)exp);
+    } else if (exp instanceof Plus) {
+      return _computeExpression((Plus)exp);
+    } else if (exp instanceof ValueInt) {
+      return _computeExpression((ValueInt)exp);
+    } else if (exp instanceof ValueString) {
+      return _computeExpression((ValueString)exp);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(exp).toString());
+    }
   }
 }

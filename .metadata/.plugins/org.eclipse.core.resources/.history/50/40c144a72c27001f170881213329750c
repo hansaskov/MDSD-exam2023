@@ -1,0 +1,22 @@
+grammar dk.sdu.mmmi.mdsd.ui23.Ui23 with org.eclipse.xtext.common.Terminals
+
+generate ui23 "http://www.sdu.dk/mmmi/mdsd/ui23/Ui23"
+
+UI23:
+	'title' title=ID
+	functions += Function*
+	forms += Form*
+;
+
+Function: 
+	'function' name=ID '(' (type+=Type (',' type+=Type)*)? ')' ':' type+=Type
+;
+
+Form: 
+	'form' name=ID ('('(Parameter (',' Parameter)*)?')')?
+;
+
+
+Type: 
+	'boolean' | 'string' | 'number'
+;

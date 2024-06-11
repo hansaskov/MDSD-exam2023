@@ -1,0 +1,95 @@
+grammar dk.sdu.mmmi.mdsd.ui23.Ui23 with org.eclipse.xtext.common.Terminals
+
+generate ui23 "http://www.sdu.dk/mmmi/mdsd/ui23/Ui23"
+
+UI23:
+	'title' title=ID
+	functions += Function*
+	forms += Form*
+;
+
+Function: 
+	'function' name=ID '(' (types+=Type (',' types+=Type)*)? ')' ':' types+=Type
+;
+
+Form: 
+	'form' name=ID ('('(parameters+=Parameter (',' parameters+=Parameter)*)?')')? '{' layout=Layout '}'
+;
+
+
+Layout:
+	('row' | 'column') '{' components+=Component* '}'
+;
+
+Component:
+	Layout | Element | FormUse
+;
+
+Element:
+	Label | InputText | Button
+;
+
+Label:
+	'label' ':' exp=Exp
+;
+
+InputText: 
+	'input' name=ID ':' exp=Exp
+;
+
+Button: 
+	'button' '*'? name=ID ':' exp=Exp
+;
+
+FormUse: 
+	name=ID '(' (exp=Exp (',' exp=Exp)*)? ')'
+;
+
+Parameter:
+	name=ID ':' type=Type
+;
+
+Type: 
+	'boolean' | 'string' | 'number'
+;
+
+
+Test123 returns Expression: 
+	Equal (( {And.left=current} '&&' | {Or.left=current} '||') right=Compare)*
+;
+
+
+Equal returns Expresssion: 
+	Compare (( {EQ.left=current} '==' | {NEQ.left=current}  '!=' ) right=Compare)*
+;
+
+
+Compare returns Expresssion: 
+	Concat (( 
+		{LT.left=current}  '<'  | 
+		{LTE.left=current} '<=' | 
+		{GT.left=current}  '>'  | 
+		{GTE.left=current} '>='
+	) right=Concat)*
+;
+
+Concat returns Expresssion: 
+	AddMinus (( {Conc.left=current} '&') right=AddMinus)*
+;
+
+AddMinus returns Expression:
+	Factor (( {Plus.left=current} '+' | {Minus.left=current}  '-' ) right=Factor)*
+;
+
+Factor returns Expression:
+	Primary (({Mult.left=current} '*' | {Div.left=current}  '/'  ) right=Primary)*
+;
+
+
+Primary returns Expression:
+	{MathNumber} value=INT | '(' Exp ')' |  
+;
+
+
+
+

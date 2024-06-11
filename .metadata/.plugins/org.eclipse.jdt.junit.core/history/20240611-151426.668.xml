@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Ui23GenerationTest" project="dk.sdu.mmmi.mdsd.ui23.tests" tests="1" started="1" failures="1" errors="0" ignored="0">
+  <testsuite name="dk.sdu.mmmi.mdsd.ui23.tests.Ui23GenerationTest" time="0.102" displayname="Ui23GenerationTest" uniqueid="[engine:junit-jupiter]/[class:dk.sdu.mmmi.mdsd.ui23.tests.Ui23GenerationTest]">
+    <testcase name="loadModel1" classname="dk.sdu.mmmi.mdsd.ui23.tests.Ui23GenerationTest" time="0.102" displayname="loadModel1()" uniqueid="[engine:junit-jupiter]/[class:dk.sdu.mmmi.mdsd.ui23.tests.Ui23GenerationTest]/[method:loadModel1()]">
+      <failure>
+        <expected>MULTIPLE FILES WERE GENERATED
+
+File 1 : /myProject/./src-gen/Basic/BasicForm.java
+
+package user_interface.basic;
+		
+import javax.swing.*;
+import java.awt.event.*;
+import user_interface.common.*;
+
+public class BasicForm extends Form{
+
+	UserInterface parent;
+	
+	BasicForm(UserInterface parent) {
+		this.parent = parent;
+	}
+
+	public JPanel createPanel(){
+		return createPanel1();
+	}
+
+	public JPanel createPanel1() {
+		JPanel panel = new JPanel();
+		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+		panel.add(new JLabel("My first form"));
+		return panel;
+	}
+
+	public boolean checkValidity(){
+		return true;
+	}
+}
+
+File 2 : /myProject/./src-gen/Basic/UserInterface.java
+
+package user_interface.basic;
+	
+import javax.swing.*;
+
+public class UserInterface{
+	public JFrame frame;
+
+	public void open() {
+		frame = new JFrame("Basic");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		BasicForm form = new BasicForm(this);
+		frame.add(form.createPanel());
+		frame.pack();
+		frame.setVisible(true);
+	}
+}
+
+File 3 : /myProject/./src-gen/common/Form.java
+
+package user_interface.common;
+
+import javax.swing.*;
+
+public abstract class Form{
+	public abstract boolean checkValidity();
+	public abstract JPanel createPanel();
+}
+
+</expected>
+        <actual>MULTIPLE FILES WERE GENERATED
+
+File 1 : /myProject/./src-gen/Basic/BasicForm.java
+
+package user_interface.basic;
+		
+import javax.swing.*;
+import java.awt.event.*;
+import user_interface.common.*;
+
+public class BasicForm extends Form{
+
+	UserInterface parent;
+	
+	BasicForm(UserInterface parent) {
+		this.parent = parent;
+	}
+
+	public JPanel createPanel(){
+		return createPanel1();
+	}
+
+	public JPanel createPanel1() {
+		JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel.add(new JLabel("My first form"));
+		return panel;
+	}
+
+	public boolean checkValidity(){
+		return true;
+	}
+}
+
+File 2 : /myProject/./src-gen/Basic/UserInterface.java
+
+package user_interface.basic;
+	
+import javax.swing.*;
+
+public class UserInterface{
+	public JFrame frame;
+
+	public void open() {
+		frame = new JFrame("Basic");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		BasicForm form = new BasicForm(this);
+		frame.add(form.createPanel());
+		frame.pack();
+		frame.setVisible(true);
+	}
+}
+
+File 3 : /myProject/./src-gen/common/Form.java
+
+package user_interface.common;
+
+import javax.swing.*;
+
+public abstract class Form{
+	public abstract boolean checkValidity();
+	public abstract JPanel createPanel();
+}
+
+</actual>
+        org.junit.ComparisonFailure: expected:&lt;...nel = new JPanel();
+[		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+		]panel.add(new JLabel...&gt; but was:&lt;...nel = new JPanel();
+[        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        ]panel.add(new JLabel...&gt;
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at org.eclipse.xtext.xbase.testing.CompilationTestHelper$1.accept(CompilationTestHelper.java:179)
+	at org.eclipse.xtext.xbase.testing.CompilationTestHelper$1.accept(CompilationTestHelper.java:1)
+	at org.eclipse.xtext.xbase.testing.CompilationTestHelper.compile(CompilationTestHelper.java:248)
+	at org.eclipse.xtext.xbase.testing.CompilationTestHelper.compile(CompilationTestHelper.java:197)
+	at org.eclipse.xtext.xbase.testing.CompilationTestHelper.assertCompilesTo(CompilationTestHelper.java:176)
+	at dk.sdu.mmmi.mdsd.ui23.tests.Ui23GenerationTest.loadModel1(Ui23GenerationTest.java:184)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+
+      </failure>
+    </testcase>
+  </testsuite>
+</testrun>

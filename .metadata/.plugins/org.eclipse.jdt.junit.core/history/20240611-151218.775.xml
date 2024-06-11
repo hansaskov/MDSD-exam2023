@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UiFormatTests" project="dk.sdu.mmmi.mdsd.ui23.tests" tests="8" started="8" failures="4" errors="0" ignored="0">
+  <testsuite name="dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests" time="0.084" displayname="UiFormatTests" uniqueid="[engine:junit-jupiter]/[class:dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests]">
+    <testcase name="loadModel1" classname="dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests" time="0.041" displayname="loadModel1()" uniqueid="[engine:junit-jupiter]/[class:dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests]/[method:loadModel1()]"/>
+    <testcase name="loadModel2" classname="dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests" time="0.003" displayname="loadModel2()" uniqueid="[engine:junit-jupiter]/[class:dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests]/[method:loadModel2()]"/>
+    <testcase name="loadModel3" classname="dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests" time="0.003" displayname="loadModel3()" uniqueid="[engine:junit-jupiter]/[class:dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests]/[method:loadModel3()]"/>
+    <testcase name="loadModel4" classname="dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests" time="0.003" displayname="loadModel4()" uniqueid="[engine:junit-jupiter]/[class:dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests]/[method:loadModel4()]"/>
+    <testcase name="loadModel5" classname="dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests" time="0.013" displayname="loadModel5()" uniqueid="[engine:junit-jupiter]/[class:dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests]/[method:loadModel5()]">
+      <failure>
+        <expected>true</expected>
+        <actual>false</actual>
+        org.opentest4j.AssertionFailedError: Unexpected errors: XtextSyntaxDiagnostic: null:14 no viable alternative at input '#', XtextSyntaxDiagnostic: null:18 no viable alternative at input 'password', XtextSyntaxDiagnostic: null:18 mismatched input '==' expecting '(' ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:214)
+	at dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests.loadModel5(UiFormatTests.java:290)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+
+      </failure>
+    </testcase>
+    <testcase name="loadModel6" classname="dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests" time="0.009" displayname="loadModel6()" uniqueid="[engine:junit-jupiter]/[class:dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests]/[method:loadModel6()]">
+      <failure>
+        <expected>true</expected>
+        <actual>false</actual>
+        org.opentest4j.AssertionFailedError: Unexpected errors: XtextSyntaxDiagnostic: null:14 no viable alternative at input 'name', XtextSyntaxDiagnostic: null:14 mismatched input '&amp;' expecting '(', XtextSyntaxDiagnostic: null:21 no viable alternative at input 'firstName', XtextSyntaxDiagnostic: null:21 mismatched input '!=' expecting '(', XtextSyntaxDiagnostic: null:36 no viable alternative at input '#', XtextSyntaxDiagnostic: null:36 no viable alternative at input 'nameLength', XtextSyntaxDiagnostic: null:37 mismatched input '}' expecting '(', XtextSyntaxDiagnostic: null:40 no viable alternative at input 'acrLength', XtextSyntaxDiagnostic: null:40 mismatched input '&gt;=' expecting '(', XtextSyntaxDiagnostic: null:49 no viable alternative at input '#' ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:214)
+	at dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests.loadModel6(UiFormatTests.java:447)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+
+      </failure>
+    </testcase>
+    <testcase name="loadModel7" classname="dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests" time="0.003" displayname="loadModel7()" uniqueid="[engine:junit-jupiter]/[class:dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests]/[method:loadModel7()]">
+      <failure>
+        <expected>true</expected>
+        <actual>false</actual>
+        org.opentest4j.AssertionFailedError: Unexpected errors: XtextSyntaxDiagnostic: null:13 no viable alternative at input 'validMail' ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:214)
+	at dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests.loadModel7(UiFormatTests.java:508)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+
+      </failure>
+    </testcase>
+    <testcase name="loadModel8" classname="dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests" time="0.005" displayname="loadModel8()" uniqueid="[engine:junit-jupiter]/[class:dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests]/[method:loadModel8()]">
+      <failure>
+        <expected>true</expected>
+        <actual>false</actual>
+        org.opentest4j.AssertionFailedError: Unexpected errors: XtextSyntaxDiagnostic: null:17 no viable alternative at input 'name', XtextSyntaxDiagnostic: null:17 mismatched input '&amp;' expecting '(', XtextSyntaxDiagnostic: null:24 no viable alternative at input 'firstName', XtextSyntaxDiagnostic: null:24 mismatched input '!=' expecting '(', XtextSyntaxDiagnostic: null:32 no viable alternative at input 'validMail', XtextSyntaxDiagnostic: null:42 no viable alternative at input '#', XtextSyntaxDiagnostic: null:42 no viable alternative at input 'nameLength', XtextSyntaxDiagnostic: null:43 mismatched input '}' expecting '(', XtextSyntaxDiagnostic: null:46 no viable alternative at input 'acrLength', XtextSyntaxDiagnostic: null:46 mismatched input '&gt;=' expecting '(', XtextSyntaxDiagnostic: null:61 no viable alternative at input '#', XtextSyntaxDiagnostic: null:61 no viable alternative at input 'validLike', XtextSyntaxDiagnostic: null:61 missing ')' at 'num', XtextSyntaxDiagnostic: null:61 mismatched input ',' expecting '(' ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:214)
+	at dk.sdu.mmmi.mdsd.ui23.tests.UiFormatTests.loadModel8(UiFormatTests.java:697)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+
+      </failure>
+    </testcase>
+  </testsuite>
+</testrun>

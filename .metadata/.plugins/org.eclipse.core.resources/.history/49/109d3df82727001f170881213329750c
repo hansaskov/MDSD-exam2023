@@ -1,0 +1,9 @@
+grammar dk.sdu.mmmi.mdsd.ui23.Ui23 with org.eclipse.xtext.common.Terminals
+
+generate ui23 "http://www.sdu.dk/mmmi/mdsd/ui23/Ui23"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

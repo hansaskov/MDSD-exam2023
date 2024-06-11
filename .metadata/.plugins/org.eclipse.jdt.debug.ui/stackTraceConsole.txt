@@ -1,0 +1,17 @@
+org.junit.ComparisonFailure: expected:<...nel createPanel();
+}[]> but was:<...nel createPanel();
+}[
+
+]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at org.eclipse.xtext.xbase.testing.CompilationTestHelper$1.accept(CompilationTestHelper.java:179)
+	at org.eclipse.xtext.xbase.testing.CompilationTestHelper$1.accept(CompilationTestHelper.java:1)
+	at org.eclipse.xtext.xbase.testing.CompilationTestHelper.compile(CompilationTestHelper.java:248)
+	at org.eclipse.xtext.xbase.testing.CompilationTestHelper.compile(CompilationTestHelper.java:197)
+	at org.eclipse.xtext.xbase.testing.CompilationTestHelper.assertCompilesTo(CompilationTestHelper.java:176)
+	at dk.sdu.mmmi.mdsd.ui23.tests.Ui23GenerationTest.loadModel1(Ui23GenerationTest.java:182)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
